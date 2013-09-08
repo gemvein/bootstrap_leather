@@ -1,7 +1,7 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
+require 'spec_helper'
 
-describe "BootstrapLeather" do
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
+describe BootstrapLeather do
+  it 'should return correct version string' do
+    BootstrapLeather.version_string.should == "BootstrapLeather version #{BootstrapLeather::VERSION}"
   end
 end
