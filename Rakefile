@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "bootstrap_leather"
   gem.homepage = "http://github.com/nerakdon/bootstrap_leather"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{BootstrapLeather makes it easier to create apps using Twitter Bootstrap}
+  gem.description = %Q{BootstrapLeather is a collection of view helpers that makes it easier to create apps using Twitter Bootstrap}
   gem.email = "webmaster@sourcherryweb.com"
   gem.authors = ["Karen Lundgren"]
   # dependencies defined in Gemfile

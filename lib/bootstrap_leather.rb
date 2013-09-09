@@ -1,5 +1,6 @@
 module BootstrapLeather
   require 'rails'
+  require 'jquery-rails'
 
   require 'bootstrap_leather/configuration'
   require 'bootstrap_leather/engine'

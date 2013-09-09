@@ -1,0 +1,10 @@
+.navbar
+  .navbar-inner
+    -# .btn-navbar is used as the toggle for when the responsive design gets narrow and the navbar goes away
+    %a.btn.btn-navbar{'data-target'=>".nav-collapse", 'data-toggle'=>"collapse"}
+      .icon-bar
+      .icon-bar
+      .icon-bar
+    = link_to BootstrapLeather.configuration.application_title, BootstrapLeather.configuration.application_path, :class => 'brand'
+    .nav-collapse
+      = block

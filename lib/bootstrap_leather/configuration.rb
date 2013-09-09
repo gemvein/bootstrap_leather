@@ -11,10 +11,13 @@ module BootstrapLeather
   end
   
   class Configuration
-    attr_accessor :config_variable_name
+    attr_accessor :application_title, :application_description, :application_keywords, :application_path
     
     def initialize
-      self.config_variable_name = 'config_variable_value'
+      self.application_path = '/'
+      self.application_title = 'Run the Generator, Config and Restart'
+      self.application_description = 'Try it, very easy. `rails g bootstrap_leather:install` is the generator command.'
+      self.application_keywords = 'Then,fix,your,config,file'
     end
   end
 end

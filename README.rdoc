@@ -1,8 +1,25 @@
-= bootstrap_leather
+= BootstrapLeather
 
-Description goes here.
+BootstrapLeather is a collection of view helpers that makes it easier to create apps using Twitter Bootstrap
 
-== Contributing to bootstrap_leather
+== Installation
+
+Install the gem
+    gem 'bootstrap_leather'
+    bundle install
+
+You will need to install bootstrap as a separate gem.  I recommend my own customizable_bootstrap gem, which makes use of boostrap-sass as a backend, but provides a set of files to make modifying it easier.
+
+== Usage Examples
+
+=== Badges and Labels
+    badge '25'
+    label 'unread'
+
+=== Icons
+    icon 'check'
+
+== Contributing to BootstrapLeather
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.

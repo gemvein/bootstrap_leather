@@ -1,0 +1,4 @@
+-[:notice, :error, :alert].each do |level|
+  -unless flash[level].blank?
+    = alert flash_class(level), flash[level]
+      
