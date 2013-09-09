@@ -8,7 +8,7 @@ module BootstrapLeather
     # all public methods in here will be run in order
 
     def add_initializer
-      output "To start with, you'll need an initializer.  This is where you put your configuration options.", :magenta
+      output "You'll be wanting an initializer.  This is where you put your configuration options.", :magenta
       template "initializer.rb", "config/initializers/bootstrap_leather.rb"
     end
     

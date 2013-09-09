@@ -60,12 +60,6 @@ To tell a view to add a hero unit, do:
 Then put one of these somewhere in your layout:
     = render_hero_unit
 
-=== Breadcrumb
-    = breadcrumb do
-      = nav_item 'Ipsum', '#'
-      = nav_item 'Dolor', '#'
-      = nav_item 'Sit', '#'
-
 === Alerts
 
 To get all alerts, do:

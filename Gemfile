@@ -14,8 +14,8 @@ group :development, :test do
   gem 'jeweler'
   gem 'puma'
   gem 'customizable_bootstrap'
-  gem 'haml'
+  gem 'jquery-rails'
 end
 
-gem 'jquery-rails'
 gem 'rails'
+gem 'haml'

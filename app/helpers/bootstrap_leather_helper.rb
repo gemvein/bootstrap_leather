@@ -56,7 +56,7 @@ module BootstrapLeatherHelper
     render(:partial => 'bootstrap_leather/alert_flash_messages', :locals => {:html_options => html_options})
   end
 
-  def modal(title, close_text = 'Close', html_options = {}, &block)
+  def modal(title = '', close_text = 'Close', html_options = {}, &block)
     render(:partial => 'bootstrap_leather/modal', :locals => {:close_text => close_text, :title => title, :block => capture(&block), :html_options => html_options})
   end
 
@@ -66,10 +66,6 @@ module BootstrapLeatherHelper
 
   def nav_list(html_options = {}, &block)
     render(:partial => 'bootstrap_leather/nav_list', :locals => {:block => capture(&block), :html_options => html_options})
-  end
-
-  def breadcrumb(html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/breadcrumb', :locals => {:block => capture(&block), :html_options => html_options})
   end
 
   def navbar(html_options = {}, &block)
@@ -155,7 +151,7 @@ module BootstrapLeatherHelper
   def render_footer_javascript
     render(:partial => 'bootstrap_leather/footer_javascript')
   end
-  alias_method :breadcrumbs, :breadcrumb
+
   alias_method :nav_bar, :navbar
   alias_method :nav_bar_in_container, :navbar_in_container
   alias_method :nav_bar_with_container, :navbar_with_container

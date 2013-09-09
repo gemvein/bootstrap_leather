@@ -5,13 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = "bootstrap_leather"
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Karen Lundgren"]
-  s.date = "2013-09-08"
+  s.date = "2013-09-09"
   s.description = "BootstrapLeather is a collection of view helpers that makes it easier to create apps using Twitter Bootstrap"
   s.email = "webmaster@sourcherryweb.com"
+  s.executables = ["rails"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -26,17 +27,25 @@ Gem::Specification.new do |s|
     "VERSION",
     "app/helpers/bootstrap_leather_helper.rb",
     "app/views/bootstrap_leather/_alert.html.haml",
+    "app/views/bootstrap_leather/_alert_flash_messages.html.haml",
     "app/views/bootstrap_leather/_badge.html.haml",
     "app/views/bootstrap_leather/_dropdown_nav_item.html.haml",
-    "app/views/bootstrap_leather/_head.html.haml",
+    "app/views/bootstrap_leather/_footer_javascript.html.haml",
+    "app/views/bootstrap_leather/_head_css.html.haml",
     "app/views/bootstrap_leather/_hero_unit.html.haml",
     "app/views/bootstrap_leather/_icon.html.haml",
-    "app/views/bootstrap_leather/_list.html.haml",
-    "app/views/bootstrap_leather/_messages.html.haml",
     "app/views/bootstrap_leather/_modal.html.haml",
     "app/views/bootstrap_leather/_nav_item.html.haml",
+    "app/views/bootstrap_leather/_nav_list.html.haml",
+    "app/views/bootstrap_leather/_navbar.html.haml",
+    "app/views/bootstrap_leather/_navbar_in_container.haml",
+    "app/views/bootstrap_leather/_navbar_with_container.haml",
     "app/views/bootstrap_leather/_tabs.html.haml",
     "app/views/bootstrap_leather/_thumbnail.html.haml",
+    "app/views/bootstrap_leather/_widget.html.haml",
+    "app/views/bootstrap_leather/_widgets.html.haml",
+    "bin/rails",
+    "bootstrap_leather.gemspec",
     "lib/bootstrap_leather.rb",
     "lib/bootstrap_leather/configuration.rb",
     "lib/bootstrap_leather/engine.rb",
@@ -51,26 +60,35 @@ Gem::Specification.new do |s|
     "spec/dummy/Rakefile",
     "spec/dummy/app/assets/images/.keep",
     "spec/dummy/app/assets/javascripts/application.js",
-    "spec/dummy/app/assets/stylesheets/application.css",
+    "spec/dummy/app/assets/javascripts/customizable_bootstrap/index.js",
+    "spec/dummy/app/assets/stylesheets/application.css.scss",
+    "spec/dummy/app/assets/stylesheets/customizable_bootstrap/colors.css.scss",
+    "spec/dummy/app/assets/stylesheets/customizable_bootstrap/font.css.scss",
+    "spec/dummy/app/assets/stylesheets/customizable_bootstrap/grid.css.scss",
+    "spec/dummy/app/assets/stylesheets/customizable_bootstrap/index.css.scss",
+    "spec/dummy/app/assets/stylesheets/customizable_bootstrap/layers.css.scss",
+    "spec/dummy/app/assets/stylesheets/customizable_bootstrap/overrides.css.scss",
     "spec/dummy/app/controllers/application_controller.rb",
     "spec/dummy/app/controllers/concerns/.keep",
+    "spec/dummy/app/controllers/welcome_controller.rb",
     "spec/dummy/app/helpers/application_helper.rb",
     "spec/dummy/app/mailers/.keep",
     "spec/dummy/app/models/.keep",
     "spec/dummy/app/models/concerns/.keep",
     "spec/dummy/app/views/layouts/application.html.haml",
+    "spec/dummy/app/views/welcome/index.html.haml",
     "spec/dummy/bin/bundle",
     "spec/dummy/bin/rails",
     "spec/dummy/bin/rake",
     "spec/dummy/config.ru",
     "spec/dummy/config/application.rb",
     "spec/dummy/config/boot.rb",
-    "spec/dummy/config/database.yml",
     "spec/dummy/config/environment.rb",
     "spec/dummy/config/environments/development.rb",
     "spec/dummy/config/environments/production.rb",
     "spec/dummy/config/environments/test.rb",
     "spec/dummy/config/initializers/backtrace_silencers.rb",
+    "spec/dummy/config/initializers/bootstrap_leather.rb",
     "spec/dummy/config/initializers/filter_parameter_logging.rb",
     "spec/dummy/config/initializers/inflections.rb",
     "spec/dummy/config/initializers/mime_types.rb",
@@ -98,29 +116,41 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rails>, [">= 0"])
+      s.add_runtime_dependency(%q<haml>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
       s.add_development_dependency(%q<shoulda-matchers>, [">= 0"])
       s.add_development_dependency(%q<capybara>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<puma>, [">= 0"])
+      s.add_development_dependency(%q<customizable_bootstrap>, [">= 0"])
+      s.add_development_dependency(%q<jquery-rails>, [">= 0"])
     else
       s.add_dependency(%q<rails>, [">= 0"])
+      s.add_dependency(%q<haml>, [">= 0"])
       s.add_dependency(%q<rspec>, [">= 0"])
       s.add_dependency(%q<shoulda-matchers>, [">= 0"])
       s.add_dependency(%q<capybara>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<puma>, [">= 0"])
+      s.add_dependency(%q<customizable_bootstrap>, [">= 0"])
+      s.add_dependency(%q<jquery-rails>, [">= 0"])
     end
   else
     s.add_dependency(%q<rails>, [">= 0"])
+    s.add_dependency(%q<haml>, [">= 0"])
     s.add_dependency(%q<rspec>, [">= 0"])
     s.add_dependency(%q<shoulda-matchers>, [">= 0"])
     s.add_dependency(%q<capybara>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<puma>, [">= 0"])
+    s.add_dependency(%q<customizable_bootstrap>, [">= 0"])
+    s.add_dependency(%q<jquery-rails>, [">= 0"])
   end
 end
 
