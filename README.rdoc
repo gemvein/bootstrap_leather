@@ -53,7 +53,7 @@ In your layout:
 === Hero Units
 
 To tell a view to add a hero unit, do:
-    = add_hero_unit do
+    - add_hero_unit do
       %h1 This is a Hero Unit.
       %p This is its description paragraph, which isn't very clever but at least it's not lorem ipsum.
 
@@ -144,6 +144,26 @@ First, add them all, then render them.
 === Thumbnail
 
     = thumbnail link_to image_tag(image_url), path
+
+== Great Bootstrap functionality outside the scope of this gem
+
+The following are not covered because there are already so many wonderful resources providing this functionality.
+
+* Bootstrap itself (I use my customizable_bootstrap, which is powered by bootstrap-sass, but you can use anything)
+    * Consider the possibilities:
+        * Any form of Bootstrap for Rails you want.
+            * Less
+            * Sass
+        * A themed bootstrap replacement:
+            * Kickstrap
+            * Bootswatch
+        * A theme generated on the fly:
+            * Bootstrap ThemeRoller
+            * Bootstrap Magic
+* Jquery UI theme for bootstrap (I use jquery-ui-bootstrap-rails-asset)
+* Forms (I recommend bootstrap_forms)
+* Breadcrumb generation (try breadcrumbs_on_rails)
+* Pagination (Try my bootstrap_pager)
 
 == Contributing to BootstrapLeather
  
