@@ -1,21 +1,35 @@
 module BootstrapLeatherHelper
 
-  def page_title
-    page_title = ''
-    if @title
-      page_title << @title
-      page_title << ': '
-    end
+  def add_title(title)
+    @title = title
+  end
+
+  def add_description(description)
+    @description = description
+  end
+
+  def add_keywords(keywords)
+    @keywords = keywords
+  end
+
+  def render_keywords
+    tag :meta, :name => :keywords, :content => @keywords || BootstrapLeather.configuration.application_keywords
+  end
+
+  def render_description
+    tag :meta, :name => :description, :content => @description || BootstrapLeather.configuration.application_keywords
+  end
+
+  def render_title
+    page_title = []
+    page_title << @title
     page_title << BootstrapLeather.configuration.application_title
-    if @keywords
-      page_title << ': '
-      page_title << @keywords
-    end
-    page_title
+    page_title << @keywords
+    content_tag :title, page_title.compact.join(': ')
   end
 
   def render_h1(html_options = {})
-    render(:partial => 'bootstrap_leather/h1', :locals => {:html_options => html_options, :block => @title})
+    content_tag :h1, @title, html_options
   end
 
   def flash_class(level)
@@ -50,20 +64,20 @@ module BootstrapLeatherHelper
     render(:partial => 'bootstrap_leather/navbar', :locals => {:block => capture(&block), :html_options => html_options})
   end
 
-  def nav_bar_with_container(html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/nav_bar_with_container', :locals => {:block => capture(&block), :html_options => html_options})
+  def navbar_with_container(html_options = {}, &block)
+    render(:partial => 'bootstrap_leather/navbar_with_container', :locals => {:block => capture(&block), :html_options => html_options})
   end
 
-  def nav_bar_in_container(html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/nav_bar_in_container', :locals => {:block => capture(&block), :html_options => html_options})
+  def navbar_in_container(html_options = {}, &block)
+    render(:partial => 'bootstrap_leather/navbar_in_container', :locals => {:block => capture(&block), :html_options => html_options})
   end
 
   def container(html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/nav_bar_in_container', :locals => {:block => capture(&block), :html_options => html_options})
+    render(:partial => 'bootstrap_leather/navbar_in_container', :locals => {:block => capture(&block), :html_options => html_options})
   end
 
   def row(html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/nav_bar_with_container', :locals => {:block => capture(&block), :html_options => html_options})
+    render(:partial => 'bootstrap_leather/navbar_with_container', :locals => {:block => capture(&block), :html_options => html_options})
   end
 
   def add_widget(html_options = {}, &block)
@@ -72,9 +86,9 @@ module BootstrapLeatherHelper
     end
   end
 
-  def add_hero_unit(html_options = {}, &block)
+  def add_hero_unit(&block)
     content_for :hero_unit do
-      render(:partial => 'bootstrap_leather/hero_unit', :locals => {:block => capture(&block), :html_options => html_options})
+      capture(&block)
     end
   end
 
@@ -133,4 +147,6 @@ module BootstrapLeatherHelper
   end
   alias_method :breadcrumbs, :breadcrumb
   alias_method :nav_bar, :navbar
+  alias_method :nav_bar_in_container, :navbar_in_container
+  alias_method :nav_bar_with_container, :navbar_with_container
 end

@@ -12,12 +12,115 @@ You will need to install bootstrap as a separate gem.  I recommend my own custom
 
 == Usage Examples
 
+=== SEO tools: Title, Keywords, Description, Oh My!
+
+In your view:
+    - add_title 'Title Text Goes Here'
+    - add_keywords 'Per, Page, Keywords, Go, Here'
+    - add_description 'And a description, to go with it.'
+
+In your layout:
+    %head
+        = render_title          # For the title tag, including SEO content
+        = render_keywords       # Defaults to what you put in the config file
+        = render_description    # Can be hooked up within a mountable rails engine, too.
+    %body
+        = render_h1         # For the h1 tag containing the title alone
+
+=== Hero Units
+
+To tell a view to add a hero unit, do:
+    = add_hero_unit do
+      %h1 This is a Hero Unit.
+      %p This is its description paragraph, which isn't very clever but at least it's not lorem ipsum.
+
+Then put one of these somewhere in your layout:
+    = render_hero_unit
+
+=== Breadcrumb
+    = breadcrumb do
+      = nav_item 'Ipsum', '#'
+      = nav_item 'Dolor', '#'
+      = nav_item 'Sit', '#'
+
+=== Alerts
+
+To get all alerts, do:
+    = alert_flash_messages
+
+To create one alert, do:
+    = alert 'alert-info', 'The message you want to alert with goes here.'
+
+=== Widgets
+
+To add a widget in any of your views:
+    - add_widget do
+      %h3 A widget is...
+      %p  Not a bootstrap concept, but useful all the same.
+
+To render the ones you have saved up:
+    = render_widgets
+
+=== Modals
+    = modal 'Title of the modal here.' do
+      %p Lorem ipsum, baby.
+
 === Badges and Labels
-    badge '25'
-    label 'unread'
+    = badge '25'
+    = label 'unread'
 
 === Icons
-    icon 'check'
+    = icon 'check'
+
+=== Navbars
+For a wide navbar, try this:
+
+    = navbar_with_container :class => 'navbar-static-top navbar-inverse' do
+      = nav_list do
+        = dropdown_nav_item 'Lorem', '#' do
+          = nav_item 'Ipsum', '#'
+          = nav_item 'Dolor', '#'
+          = nav_item 'Sit', '#'
+        = nav_item 'Ipsum', '#'
+        = nav_item 'Dolor', '#'
+        = nav_item 'Sit', '#'
+      = nav_list :class => 'pull-right' do
+        = nav_item 'Amet', '#', :data => {:toggle => 'modal', :target => '#modal'}
+
+or for a narrow one:
+
+    = navbar_in_container :class => 'navbar-static-top navbar-inverse' do
+      = nav_list do
+        = dropdown_nav_item 'Lorem', '#' do
+          = nav_item 'Ipsum', '#'
+          = nav_item 'Dolor', '#'
+          = nav_item 'Sit', '#'
+        = nav_item 'Ipsum', '#'
+        = nav_item 'Dolor', '#'
+        = nav_item 'Sit', '#'
+      = nav_list :class => 'pull-right' do
+        = nav_item 'Amet', '#'
+
+=== Nav List
+    = nav_list :class => 'nav-pills' do
+        = nav_item 'Ipsum', '#'
+        = nav_item 'Dolor', '#'
+        = nav_item 'Sit', '#'
+
+=== Tabs
+
+First, add them all, then render them.
+    - add_tab 'First Tab' do
+      %p Tab contents go inside.
+    - add_tab 'Second Tab' do
+      %p Tab contents go inside here too.
+    - add_tab 'Third Tab' do
+      %p Yep, tab contents go inside.
+    = render_tabs 'left'
+
+=== Thumbnail
+
+    = thumbnail link_to image_tag(image_url), path
 
 == Contributing to BootstrapLeather
  
