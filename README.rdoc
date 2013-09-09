@@ -1,6 +1,6 @@
 = BootstrapLeather
 
-BootstrapLeather is a collection of view helpers that makes it easier to create apps using Twitter Bootstrap
+BootstrapLeather is a collection of view helpers that makes it easier to create apps using Twitter Bootstrap.
 
 == Installation
 
@@ -12,20 +12,43 @@ You will need to install bootstrap as a separate gem.  I recommend my own custom
 
 == Usage Examples
 
-=== SEO tools: Title, Keywords, Description, Oh My!
+=== SEO tools for head and body alike: Title, Keywords, Description, Oh My!
 
-In your view:
-    - add_title 'Title Text Goes Here'
-    - add_keywords 'Per, Page, Keywords, Go, Here'
-    - add_description 'And a description, to go with it.'
+In your view, assuming your model implements the given methods on the Item model (otherwise, omit):
+
+    - add_title @item.title
+
+    - add_keywords @item.keywords
+
+    - add_description @item.description
+
+    - add_head_css do
+      = @item.css
+
+    - add_footer_javascript do
+      = @item.javascript
 
 In your layout:
     %head
-        = render_title          # For the title tag, including SEO content
-        = render_keywords       # Defaults to what you put in the config file
-        = render_description    # Can be hooked up within a mountable rails engine, too.
+      = render_title          # For the title tag, including SEO content
+      = render_keywords       # Defaults to what you put in the config file
+      = render_description    # Can be hooked up within a mountable rails engine, too.
+      = responsive_meta_tag   # If you're using the responsive features, you need this in your head
+
+      <...>
+
+      = render_head_css
+
     %body
+      <...>
+
+      .container
         = render_h1         # For the h1 tag containing the title alone
+
+      <...>
+
+      %footer
+        = render_footer_javascript
 
 === Hero Units
 

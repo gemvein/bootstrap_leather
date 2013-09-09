@@ -4,10 +4,14 @@
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html;charset=utf-8"}
     %meta{"name"=>"description", :content=>@description || BootstrapLeather.configuration.application_description || ''}
-    %meta{"name"=>"keywords", :content=>@keywords || BootstrapLeather.configuration.application_keywords || ''}
-    =csrf_meta_tag
 
-    %title= page_title
+    = csrf_meta_tag
+
+    = render_title
+    = render_keywords
+    = render_description
+    = responsive_meta_tag
+
     -if @meta
       -@meta.each do |key|
         %meta{:name=>key[0], :content=>key[1]}
@@ -15,8 +19,8 @@
     - if @rss_title && @rss_url
       = auto_discovery_link_tag(:rss, @rss_url, {:title => @rss_title})
 
-    = stylesheet_link_tag "application"
-    = yield :head_css
+    = stylesheet_link_tag 'application'
+    = render_css
 
   %body{:class => controller.controller_name}
     = nav_bar_with_container :class => 'navbar-static-top navbar-inverse' do
@@ -61,4 +65,4 @@
       %p Lorem ipsum, baby.
 
     = javascript_include_tag 'application'
-    = yield :end_javascript
+    = render_javascript

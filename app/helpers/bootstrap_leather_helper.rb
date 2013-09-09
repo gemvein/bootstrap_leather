@@ -12,6 +12,14 @@ module BootstrapLeatherHelper
     @keywords = keywords
   end
 
+  def add_head_css(&block)
+    content_for :head_css, &block
+  end
+
+  def add_footer_javascript(&block)
+    content_for :footer_javascript, &block
+  end
+
   def render_keywords
     tag :meta, :name => :keywords, :content => @keywords || BootstrapLeather.configuration.application_keywords
   end
@@ -30,6 +38,10 @@ module BootstrapLeatherHelper
 
   def render_h1(html_options = {})
     content_tag :h1, @title, html_options
+  end
+
+  def responsive_meta_tag
+    tag :meta, :name => :viewport, :content => 'width=device-width, initial-scale=1.0'
   end
 
   def flash_class(level)
@@ -72,14 +84,6 @@ module BootstrapLeatherHelper
     render(:partial => 'bootstrap_leather/navbar_in_container', :locals => {:block => capture(&block), :html_options => html_options})
   end
 
-  def container(html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/navbar_in_container', :locals => {:block => capture(&block), :html_options => html_options})
-  end
-
-  def row(html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/navbar_with_container', :locals => {:block => capture(&block), :html_options => html_options})
-  end
-
   def add_widget(html_options = {}, &block)
     content_for :widgets do
       render(:partial => 'bootstrap_leather/widget', :locals => {:block => capture(&block), :html_options => html_options})
@@ -87,9 +91,7 @@ module BootstrapLeatherHelper
   end
 
   def add_hero_unit(&block)
-    content_for :hero_unit do
-      capture(&block)
-    end
+    content_for :hero_unit, &block
   end
 
   def dropdown_nav_item(text, href, active = false, &block)
@@ -144,6 +146,14 @@ module BootstrapLeatherHelper
 
   def render_hero_unit
     render(:partial => 'bootstrap_leather/hero_unit')
+  end
+
+  def render_head_css
+    render(:partial => 'bootstrap_leather/head_css')
+  end
+
+  def render_footer_javascript
+    render(:partial => 'bootstrap_leather/footer_javascript')
   end
   alias_method :breadcrumbs, :breadcrumb
   alias_method :nav_bar, :navbar
