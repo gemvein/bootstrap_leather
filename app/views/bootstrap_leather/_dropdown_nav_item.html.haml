@@ -1,9 +1,9 @@
 - if active
   - css_class = 'active'
 - else 
-  - css_class = 'inactive'
+  - css_class = ''
 %li{:class => 'dropdown ' + css_class}
-  %a.dropdown-toggle{:href=>href, :data => {:target => '#', :toggle => 'dropdown'}}
+  %a.dropdown-toggle{:id => Time.now.to_f, :href=>href, :data => {:target => '#', :toggle => 'dropdown'}}
     = text
     %b.caret
   %ul.dropdown-menu
