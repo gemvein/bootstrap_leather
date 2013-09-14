@@ -7,5 +7,5 @@
   %a.dropdown-toggle{:id => id, :href=>href, :data => {:target => '#', :toggle => 'dropdown'}}
     = text
     %b.caret
-  %ul.dropdown-menu{:role => 'menu', :arialabeledby => id}
+  %ul.dropdown-menu{:role => 'menu', :aria => {:labelledby => id}}
     = block
