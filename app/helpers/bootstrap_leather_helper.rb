@@ -129,7 +129,11 @@ module BootstrapLeatherHelper
   def error_messages(object)
     if object.try(:errors) and object.errors.full_messages.any?
       title = I18n.t('bootstrap_forms.errors.header', :model => object.class.model_name.human.downcase)
-      message = render(:partial => 'layouts/list', :locals => {:items => object.errors.full_messages.map})
+      message = content_tag(:ul) do
+                  object.errors.full_messages.map.each do |item|
+                    concat content_tag(:li, item)
+                  end
+                end
       alert('alert-error', title, message).html_safe
     else
       '' # return empty string
