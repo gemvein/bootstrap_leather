@@ -9,10 +9,9 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Karen Lundgren"]
-  s.date = "2013-09-15"
+  s.date = "2013-09-27"
   s.description = "BootstrapLeather is a collection of view helpers that makes it easier to create apps using Twitter Bootstrap"
   s.email = "webmaster@sourcherryweb.com"
-  s.executables = ["rails"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -44,7 +43,6 @@ Gem::Specification.new do |s|
     "app/views/bootstrap_leather/_thumbnail.html.haml",
     "app/views/bootstrap_leather/_widget.html.haml",
     "app/views/bootstrap_leather/_widgets.html.haml",
-    "bin/rails",
     "bootstrap_leather.gemspec",
     "lib/bootstrap_leather.rb",
     "lib/bootstrap_leather/configuration.rb",
@@ -108,7 +106,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/nerakdon/bootstrap_leather"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "2.0.7"
+  s.rubygems_version = "2.0.3"
   s.summary = "BootstrapLeather makes it easier to create apps using Twitter Bootstrap"
 
   if s.respond_to? :specification_version then
