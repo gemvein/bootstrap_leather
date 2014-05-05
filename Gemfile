@@ -11,8 +11,8 @@ group :test do
   gem 'capybara'
 end
 
-gem 'customizable_bootstrap'
+gem 'bootstrap-sass'
 gem 'jquery-rails'
-gem 'rails'
+gem 'rails', '>= 4.1'
 gem 'haml'
 gem 'jeweler'
