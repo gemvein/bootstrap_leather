@@ -12,7 +12,6 @@ group :test do
 end
 
 gem 'bootstrap-sass'
-gem 'jquery-rails'
 gem 'rails', '>= 4.1'
 gem 'haml'
 gem 'jeweler'
