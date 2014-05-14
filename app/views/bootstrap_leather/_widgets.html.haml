@@ -1,8 +1,9 @@
-- for widget in widgets
-  - html_options = widget[:html_options]
-  - content_class = html_options[:content_class]
-  - html_options[:content_class] = nil
-  - html_options[:class] = 'column ' + column_class(device_class, column_width)
-  %div{ html_options }
-    %div{:class => "well #{content_class}"}
-      =widget[:body]
+- unless widgets.nil?
+  - for widget in widgets
+    - html_options = widget[:html_options]
+    - content_class = html_options[:content_class]
+    - html_options[:content_class] = nil
+    - html_options[:class] = 'column ' + column_class(device_class, column_width)
+    %div{ html_options }
+      %div{:class => "well #{content_class}"}
+        =widget[:body]
