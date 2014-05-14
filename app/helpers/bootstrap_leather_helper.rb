@@ -81,9 +81,14 @@ module BootstrapLeatherHelper
   end
 
   def add_widget(html_options = {}, &block)
-    content_for :widgets do
-      render(:partial => 'bootstrap_leather/widget', :locals => {:block => capture(&block), :html_options => html_options})
-    end
+    @widgets ||= []
+    @widgets << { html_options: html_options, body: capture(&block) }
+  end
+
+  def render_widgets(device_class = 'md', column_width = 3)
+    html = render(:partial => 'bootstrap_leather/widgets', :locals => {:widgets => @widgets, :column_width => column_width, :device_class => device_class})
+    @widgets = nil
+    html.html_safe
   end
 
   def add_hero_unit(&block)
@@ -140,10 +145,6 @@ module BootstrapLeatherHelper
     end
   end
 
-  def render_widgets
-    render(:partial => 'bootstrap_leather/widgets')
-  end
-
   def render_hero_unit
     render(:partial => 'bootstrap_leather/hero_unit')
   end
@@ -154,6 +155,10 @@ module BootstrapLeatherHelper
 
   def render_footer_javascript
     render(:partial => 'bootstrap_leather/footer_javascript')
+  end
+
+  def column_class(device_class, column_width)
+    'col-' + device_class + '-' + column_width.to_s
   end
 
   alias_method :nav_bar, :navbar
