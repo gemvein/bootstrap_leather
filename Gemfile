@@ -5,17 +5,13 @@ source 'http://rubygems.org'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
-group :development, :test do
+group :test do
   gem 'rspec'
   gem 'shoulda-matchers'
   gem 'capybara'
-  gem 'rdoc'
-  gem 'bundler'
-  gem 'jeweler'
-  gem 'puma'
-  gem 'customizable_bootstrap'
-  gem 'jquery-rails'
 end
 
-gem 'rails'
+gem 'bootstrap-sass'
+gem 'rails', '>= 4.1'
 gem 'haml'
+gem 'jeweler'
