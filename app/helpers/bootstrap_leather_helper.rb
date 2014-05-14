@@ -73,11 +73,13 @@ module BootstrapLeatherHelper
   end
 
   def navbar_with_container(html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/navbar_with_container', :locals => {:block => capture(&block), :html_options => html_options})
+    html_options[:container_mode] = :with
+    navbar(html_options, &block)
   end
 
   def navbar_in_container(html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/navbar_in_container', :locals => {:block => capture(&block), :html_options => html_options})
+    html_options[:container_mode] = :in
+    navbar(html_options, &block)
   end
 
   def add_widget(html_options = {}, &block)
@@ -125,6 +127,10 @@ module BootstrapLeatherHelper
 
   def icon(type)
     render(:partial => 'bootstrap_leather/icon', :locals => {:type => type})
+  end
+
+  def logo_and_title
+    render(:partial => 'bootstrap_leather/logo_and_title')
   end
 
   def alert(css_class, title, message = nil)

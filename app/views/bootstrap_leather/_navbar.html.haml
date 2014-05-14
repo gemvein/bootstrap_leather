@@ -1,10 +1,47 @@
-%nav.navbar.navbar-default
-  .navbar-header
-    %button.navbar-toggle{data:{toggle:'collapse', target:'.navbar-to-collapse'},type:'button'}
-      %span.sr-only Toggle navigation
-      %span.icon-bar
-      %span.icon-bar
-      %span.icon-bar
-      = link_to logo_and_title, BootstrapLeather.configuration.application_path, :class => 'navbar-brand'
-  .collapse.navbar-collapse.navbar-to-collapse
-    = block
+- container_mode = html_options[:container_mode]
+- html_options[:container_mode] = nil
+
+- case container_mode
+  - when :with
+    %nav.navbar.navbar-default
+      .container
+        .row.clearfix
+          .col-md-12
+            .navbar-header
+              %button.navbar-toggle{data:{toggle:'collapse', target:'#navbar-to-collapse'},type:'button'}
+                %span.sr-only
+                  Toggle navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              = link_to logo_and_title, BootstrapLeather.configuration.application_path, :class => 'navbar-brand'
+            .collapse.navbar-collapse#navbar-to-collapse
+              = block
+  - when :in
+    .container
+      .row.clearfix
+        .col-md-12
+          %nav.navbar.navbar-default
+            .navbar-header
+              %button.navbar-toggle{data:{toggle:'collapse', target:'#navbar-to-collapse'},type:'button'}
+                %span.sr-only
+                  Toggle navigation
+                %span.icon-bar
+                %span.icon-bar
+                %span.icon-bar
+              = link_to logo_and_title, BootstrapLeather.configuration.application_path, :class => 'navbar-brand'
+            .collapse.navbar-collapse#navbar-to-collapse
+              = block
+  - else
+    %nav.navbar.navbar-default
+      .navbar-header
+        %button.navbar-toggle{data:{toggle:'collapse', target:'#navbar-to-collapse'},type:'button'}
+          %span.sr-only
+            Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to logo_and_title, BootstrapLeather.configuration.application_path, :class => 'navbar-brand'
+      .collapse.navbar-collapse#navbar-to-collapse
+        = block
+

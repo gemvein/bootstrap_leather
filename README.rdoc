@@ -76,7 +76,7 @@ To add a widget in any of your views:
       %p  Not a bootstrap concept, but useful all the same.
 
 To render the ones you have saved up:
-    = render_widgets
+    = render_widgets 'md', 3
 
 === Modals
     = modal 'Title of the modal here.' do
@@ -90,9 +90,11 @@ To render the ones you have saved up:
     = icon 'check'
 
 === Navbars
+
+:container_mode is optional and defaults to :none.  Can be one of: [:none, :with, :in]
 For a wide navbar, try this:
 
-    = navbar_with_container :class => 'navbar-static-top navbar-inverse' do
+    = navbar :container_mode => :with, :class => 'navbar-inverse' do
       = nav_list do
         = dropdown_nav_item 'Lorem', '#' do
           = nav_item 'Ipsum', '#'
@@ -101,22 +103,8 @@ For a wide navbar, try this:
         = nav_item 'Ipsum', '#'
         = nav_item 'Dolor', '#'
         = nav_item 'Sit', '#'
-      = nav_list :class => 'pull-right' do
+      = nav_list :class => 'navbar-right' do
         = nav_item 'Amet', '#', :data => {:toggle => 'modal', :target => '#modal'}
-
-or for a narrow one:
-
-    = navbar_in_container :class => 'navbar-static-top navbar-inverse' do
-      = nav_list do
-        = dropdown_nav_item 'Lorem', '#' do
-          = nav_item 'Ipsum', '#'
-          = nav_item 'Dolor', '#'
-          = nav_item 'Sit', '#'
-        = nav_item 'Ipsum', '#'
-        = nav_item 'Dolor', '#'
-        = nav_item 'Sit', '#'
-      = nav_list :class => 'pull-right' do
-        = nav_item 'Amet', '#'
 
 === Nav List
     = nav_list :class => 'nav-pills' do
