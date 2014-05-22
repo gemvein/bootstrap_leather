@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "bootstrap_leather"
-  s.version = "0.2.2"
+  s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Karen Lundgren"]
-  s.date = "2014-05-15"
+  s.date = "2014-05-22"
   s.description = "BootstrapLeather is a collection of view helpers that makes it easier to create apps using Twitter Bootstrap"
   s.email = "webmaster@sourcherryweb.com"
   s.extra_rdoc_files = [
