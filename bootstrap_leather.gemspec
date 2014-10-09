@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "bootstrap_leather"
-  s.version = "0.2.3"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Karen Lundgren"]
@@ -97,10 +97,6 @@ Gem::Specification.new do |s|
     "spec/dummy/config/routes.rb",
     "spec/dummy/lib/assets/.keep",
     "spec/dummy/log/.keep",
-    "spec/dummy/public/404.html",
-    "spec/dummy/public/422.html",
-    "spec/dummy/public/500.html",
-    "spec/dummy/public/favicon.ico",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://www.gemvein.com/museum/cases/bootstrap_leather"
