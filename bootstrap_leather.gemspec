@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Karen Lundgren"]
-  s.date = "2014-05-22"
+  s.date = "2014-10-09"
   s.description = "BootstrapLeather is a collection of view helpers that makes it easier to create apps using Twitter Bootstrap"
-  s.email = "webmaster@sourcherryweb.com"
+  s.email = "karen.e.lundgren@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -103,7 +103,7 @@ Gem::Specification.new do |s|
     "spec/dummy/public/favicon.ico",
     "spec/spec_helper.rb"
   ]
-  s.homepage = "http://github.com/nerakdon/bootstrap_leather"
+  s.homepage = "http://www.gemvein.com/museum/cases/bootstrap_leather"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "2.0.3"
@@ -116,18 +116,36 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<bootstrap-sass>, [">= 0"])
       s.add_runtime_dependency(%q<rails>, [">= 4.1"])
       s.add_runtime_dependency(%q<haml>, [">= 0"])
-      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
+      s.add_runtime_dependency(%q<bootstrap_leather>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, [">= 0"])
+      s.add_development_dependency(%q<rspec-rails>, [">= 0"])
+      s.add_development_dependency(%q<shoulda-matchers>, [">= 0"])
+      s.add_development_dependency(%q<capybara>, [">= 0"])
+      s.add_development_dependency(%q<coveralls>, [">= 0"])
     else
       s.add_dependency(%q<bootstrap-sass>, [">= 0"])
       s.add_dependency(%q<rails>, [">= 4.1"])
       s.add_dependency(%q<haml>, [">= 0"])
+      s.add_dependency(%q<bootstrap_leather>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<rspec>, [">= 0"])
+      s.add_dependency(%q<rspec-rails>, [">= 0"])
+      s.add_dependency(%q<shoulda-matchers>, [">= 0"])
+      s.add_dependency(%q<capybara>, [">= 0"])
+      s.add_dependency(%q<coveralls>, [">= 0"])
     end
   else
     s.add_dependency(%q<bootstrap-sass>, [">= 0"])
     s.add_dependency(%q<rails>, [">= 4.1"])
     s.add_dependency(%q<haml>, [">= 0"])
+    s.add_dependency(%q<bootstrap_leather>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<rspec>, [">= 0"])
+    s.add_dependency(%q<rspec-rails>, [">= 0"])
+    s.add_dependency(%q<shoulda-matchers>, [">= 0"])
+    s.add_dependency(%q<capybara>, [">= 0"])
+    s.add_dependency(%q<coveralls>, [">= 0"])
   end
 end
 

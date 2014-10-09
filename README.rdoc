@@ -1,5 +1,10 @@
 = BootstrapLeather
 
+{<img src="https://badge.fury.io/rb/bootstrap_leather.svg" alt="Gem Version" />}[http://badge.fury.io/rb/bootstrap_leather]
+{<img src="https://travis-ci.org/gemvein/bootstrap_leather.svg?branch=v0.2.3" alt="Build Status" />}[https://travis-ci.org/gemvein/bootstrap_leather]
+{<img src="https://coveralls.io/repos/gemvein/bootstrap_leather/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/gemvein/bootstrap_leather]
+
+
 BootstrapLeather is a collection of view helpers that makes it easier to create apps using Twitter Bootstrap.
 
 == Installation
@@ -159,5 +164,5 @@ The following are not covered because there are already so many wonderful resour
 
 == Copyright
 
-Copyright (c) 2013 Sour Cherry Web. See LICENSE.txt for further details.
+Copyright (c) 2013-2014 Gem Vein. See LICENSE.txt for further details.
 
