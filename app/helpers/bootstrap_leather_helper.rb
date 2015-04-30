@@ -181,6 +181,12 @@ module BootstrapLeatherHelper
     'col-' + device_class + '-' + column_width.to_s
   end
 
+  def definition_list(list, html_options = {}, &block)
+    render(:partial => 'bootstrap_leather/definition_list', :locals => {:list => list, :block => capture(&block), :html_options => html_options})
+  end
+
+
+  alias_method :dl, :definition_list
   alias_method :nav_bar, :navbar
   alias_method :nav_bar_in_container, :navbar_in_container
   alias_method :nav_bar_with_container, :navbar_with_container
