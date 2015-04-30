@@ -132,6 +132,10 @@ First, add them all, then render them.
 
     = thumbnail link_to image_tag(image_url), path
 
+=== Definition Lists
+
+    = dl hash_of_terms_and_definitions_or_definition_arrays
+
 == Great Bootstrap functionality outside the scope of this gem
 
 The following are not covered because there are already so many wonderful resources providing this functionality.

@@ -1,4 +1,8 @@
 %dl{ html_options }
   - list.each do |term, definition|
     %dd= term
-    %dt= definition
+    - if definition.is_an? Array
+      - for item in definition
+        %dt= item
+    - else
+      %dt= definition
