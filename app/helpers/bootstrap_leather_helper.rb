@@ -181,8 +181,8 @@ module BootstrapLeatherHelper
     'col-' + device_class + '-' + column_width.to_s
   end
 
-  def definition_list(list, html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/definition_list', :locals => {:list => list, :block => capture(&block), :html_options => html_options})
+  def definition_list(list, html_options = {})
+    render(:partial => 'bootstrap_leather/definition_list', :locals => {:list => list, :html_options => html_options})
   end
 
 
