@@ -68,23 +68,23 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<bootstrap-sass>, ["~> 3.3"])
-      s.add_runtime_dependency(%q<rails>, [">= 4.1"])
-      s.add_runtime_dependency(%q<haml>, [">= 0"])
+      s.add_runtime_dependency(%q<rails>, ["~> 4"])
+      s.add_runtime_dependency(%q<haml>, ["~> 4"])
       s.add_runtime_dependency(%q<bootstrap_leather>, [">= 0"])
-      s.add_development_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, ["~> 2"])
     else
       s.add_dependency(%q<bootstrap-sass>, ["~> 3.3"])
-      s.add_dependency(%q<rails>, [">= 4.1"])
-      s.add_dependency(%q<haml>, [">= 0"])
+      s.add_dependency(%q<rails>, ["~> 4"])
+      s.add_dependency(%q<haml>, ["~> 4"])
       s.add_dependency(%q<bootstrap_leather>, [">= 0"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<jeweler>, ["~> 2"])
     end
   else
     s.add_dependency(%q<bootstrap-sass>, ["~> 3.3"])
-    s.add_dependency(%q<rails>, [">= 4.1"])
-    s.add_dependency(%q<haml>, [">= 0"])
+    s.add_dependency(%q<rails>, ["~> 4"])
+    s.add_dependency(%q<haml>, ["~> 4"])
     s.add_dependency(%q<bootstrap_leather>, [">= 0"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<jeweler>, ["~> 2"])
   end
 end
 
