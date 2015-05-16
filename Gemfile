@@ -6,5 +6,4 @@ source 'http://rubygems.org'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'rails', '~> 4'
 gem 'haml', '~> 4'
-
-gemspec
+gem 'jeweler', '~> 2'
