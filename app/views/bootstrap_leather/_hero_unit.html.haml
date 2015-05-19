@@ -1,2 +1,3 @@
-.jumbotron
-  =yield :hero_unit
+- if content_for? :hero_unit
+  .jumbotron
+    =yield :hero_unit
