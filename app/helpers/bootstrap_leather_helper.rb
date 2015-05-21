@@ -78,7 +78,9 @@ module BootstrapLeatherHelper
   end
 
   def navbar(html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/navbar', :locals => {:block => capture(&block), :html_options => html_options})
+    container_mode = html_options[:container_mode]
+    html_options[:container_mode] = nil
+    render(:partial => 'bootstrap_leather/navbar', :locals => { :block => capture(&block), :html_options => html_options, :container_mode => container_mode })
   end
 
   def navbar_with_container(html_options = {}, &block)
