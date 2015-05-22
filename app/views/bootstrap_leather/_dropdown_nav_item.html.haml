@@ -4,7 +4,7 @@
 - else 
   - css_class = ''
 %li{:class => 'dropdown ' + css_class}
-  %a.dropdown-toggle{:id => id, :href=>href, :data => {:target => '#', :toggle => 'dropdown'}}
+  %a.dropdown-toggle{:id => id, :href=>href, :data => {:toggle => 'dropdown'}, :role => 'button', aria: { expanded: false } }
     = text
     %b.caret
   %ul.dropdown-menu{:role => 'menu', :aria => {:labelledby => id}}
