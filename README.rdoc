@@ -93,13 +93,15 @@ To render the ones you have saved up:
 
 === Icons
     = icon 'check'
+    = icon_link_to 'check', 'Link Text', link_path
+    = icon_button_to 'success', 'check', 'Link Text', link_path
 
 === Navbars
 
 :container_mode is optional and defaults to :none.  Can be one of: [:none, :inside, :outside]
 For a wide navbar, try this:
 
-    = navbar :container_mode => :with, :class => 'navbar-inverse' do
+    = navbar :container_mode => :outside, :class => 'navbar-inverse' do
       = nav_list do
         = dropdown_nav_item 'Lorem', '#' do
           = nav_item 'Ipsum', '#'

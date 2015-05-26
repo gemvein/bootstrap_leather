@@ -141,8 +141,12 @@ module BootstrapLeatherHelper
     render(:partial => 'bootstrap_leather/thumbnail', :locals => {:content => content ? content : capture(&block)})
   end
 
+  def icon_link_to(icon_type, text, link, html_options={})
+    render(:partial => 'bootstrap_leather/icon_button_to', :locals => {:button_class => button_class, :icon_type => icon_type, :text => text, :link => link, :html_options => html_options})
+  end
+
   def icon_button_to(button_class, icon_type, text, link, html_options={})
-    html_options[:class] = 'btn ' + button_class
+    html_options[:class] = 'btn btn-' + button_class
     render(:partial => 'bootstrap_leather/icon_button_to', :locals => {:button_class => button_class, :icon_type => icon_type, :text => text, :link => link, :html_options => html_options})
   end
 
