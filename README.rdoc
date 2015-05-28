@@ -71,7 +71,7 @@ To get all alerts, do:
     = alert_flash_messages
 
 To create one alert, do:
-    = alert 'alert-info', 'The message you want to alert with goes here.'
+    = alert 'info', 'The message you want to alert with goes here.'
 
 === Widgets
 
