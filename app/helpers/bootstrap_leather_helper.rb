@@ -1,19 +1,19 @@
 module BootstrapLeatherHelper
 
   def add_title(title)
-    @title = title
+    content_for :title, title
   end
 
   def add_subtitle(subtitle)
-    @subtitle = subtitle
+    content_for :subtitle, subtitle
   end
 
   def add_description(description)
-    @description = description
+    content_for :description, description
   end
 
   def add_keywords(keywords)
-    @keywords = keywords
+    content_for :keywords, keywords
   end
 
   def add_head_css(&block)
@@ -25,28 +25,28 @@ module BootstrapLeatherHelper
   end
 
   def render_keywords
-    tag :meta, :name => :keywords, :content => @keywords || BootstrapLeather.configuration.application_keywords
+    tag :meta, :name => :keywords, :content => content_for(:keywords) || BootstrapLeather.configuration.application_keywords
   end
 
   def render_description
-    tag :meta, :name => :description, :content => @description || BootstrapLeather.configuration.application_keywords
+    tag :meta, :name => :description, :content => content_for(:description) || BootstrapLeather.configuration.application_keywords
   end
 
   def render_title
     page_title = []
-    page_title << @title
-    page_title << @subtitle
+    page_title << content_for(:title)
+    page_title << content_for(:subtitle)
     page_title << BootstrapLeather.configuration.application_title
-    page_title << @keywords
+    page_title << content_for(:keywords)
     content_tag :title, page_title.compact.join(': ')
   end
 
   def render_h1(html_options = {})
-    content_tag :h1, @title, html_options
+    content_tag :h1, content_for(:title), html_options
   end
 
   def render_page_header(html_options = {})
-    render(:partial => 'bootstrap_leather/page_header', :locals => {:title => @title, :subtitle => @subtitle, :html_options => html_options})
+    render(:partial => 'bootstrap_leather/page_header', :locals => {:title => content_for(:title), :subtitle => content_for(:subtitle), :html_options => html_options})
   end
 
   def responsive_meta_tag
