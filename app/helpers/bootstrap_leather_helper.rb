@@ -41,8 +41,9 @@ module BootstrapLeatherHelper
     content_tag :title, page_title.compact.join(': ')
   end
 
-  def render_h1(html_options = {})
-    title = strip_tags content_for(:title)
+  def render_h1(html_options = {}
+    title = ''
+    title += strip_tags content_for(:title)
     if content_for(:subtitle)
       title += ' '
       title += content_tag :small, content_for(:subtitle)
