@@ -122,11 +122,11 @@ For a wide navbar, try this:
 === Tabs
 
 First, add them all, then render them.
-    - add_tab 'First Tab' do
+    - add_tab 'First Tab', 'first-tab' do
       %p Tab contents go inside.
-    - add_tab 'Second Tab' do
+    - add_tab 'Second Tab', 'second-tab' do
       %p Tab contents go inside here too.
-    - add_tab 'Third Tab' do
+    - add_tab 'Third Tab', 'third-tab' do
       %p Yep, tab contents go inside.
     = render_tabs 'left'
 
@@ -170,5 +170,5 @@ The following are not covered because there are already so many wonderful resour
 
 == Copyright
 
-Copyright (c) 2013-2014 Gem Vein. See LICENSE.txt for further details.
+Copyright (c) 2013-2015 Gem Vein. See LICENSE.txt for further details.
 

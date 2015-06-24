@@ -42,7 +42,12 @@ module BootstrapLeatherHelper
   end
 
   def render_h1(html_options = {})
-    content_tag :h1, content_for(:title), html_options
+    title = strip_tags content_for(:title)
+    if content_for(:subtitle)
+      title += ' '
+      title += content_tag :small, content_for(:subtitle)
+    end
+    content_tag :h1, title.html_safe, html_options
   end
 
   def render_page_header(html_options = {})
