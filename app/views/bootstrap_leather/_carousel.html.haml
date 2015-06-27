@@ -1,0 +1,24 @@
+%div.carousel.slide{ id: id, data: { ride: 'carousel'}}
+  -# Indicators
+  %ol
+    %li.active{ data: { target: '#' + id, slide_to: 0 } }
+    - items.each_with_index do |index, item|
+      %li{data: { target: '#' + id, slide_to: index }}
+
+  -# Wrapper for slides
+  .carousel-inner{ role: 'listbox' }
+    - items.each do |item|
+      .item
+        = image_tag item.send(options[:image_method]).url(:medium)
+        - if item.send(options[:caption_method]).present? || item.send(options[:description_method]).present?
+          .carousel-caption
+            %h3= item.send(options[:caption_method])
+            %p= item.send(options[:description_method])
+
+  -# Controls
+  %a.left.carousel-control{ href: '#' + id, role: 'button', data: { slide: 'prev' } }
+    = icon 'chevron-left'
+    .sr-only Previous
+  %a.right.carousel-control{ href: '#' + id, role: 'button', data: { slide: 'next' } }
+    = icon 'chevron-right'
+    .sr-only Next

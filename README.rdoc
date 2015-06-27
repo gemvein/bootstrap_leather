@@ -130,6 +130,14 @@ First, add them all, then render them.
       %p Yep, tab contents go inside.
     = render_tabs 'left'
 
+
+=== Carousel
+
+Pass in items and an optional hash of parameters:
+    = carousel @items
+    or
+    = carousel @items, image_method: :logo, caption_method: :title, description_method: :summary
+
 === Thumbnail
 
     = thumbnail link_to image_tag(image_url), path

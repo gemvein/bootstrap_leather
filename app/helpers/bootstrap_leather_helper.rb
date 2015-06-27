@@ -201,6 +201,13 @@ module BootstrapLeatherHelper
     render(:partial => 'bootstrap_leather/definition_list', :locals => {:list => list, :html_options => html_options})
   end
 
+  def carousel(id, items, options = {})
+    options[:image_method] ||= :image
+    options[:caption_method] ||= :caption
+    options[:description_method] ||= :description
+    render(:partial => 'bootstrap_leather/carousel', :locals => { :id => id, :items => items, :options => html_options})
+  end
+
 
   alias_method :dl, :definition_list
   alias_method :nav_bar, :navbar
