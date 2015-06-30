@@ -1,8 +1,10 @@
-#modal.modal.hide.fade{:tabindex => -1, :role => 'dialog', :aria => {:labelledby => 'modalLabel', :hidden => true}}
-  .modal-header
-    %button.close{:type => 'button', :data => {:dismiss => 'modal'}, :aria => {:hidden => true}}= 'x'
-    %h3#modalLabel= title
-  #modal-body.modal-body
-    = block
-  .modal-footer
-    %button.close{:type => 'button', :data => {:dismiss => 'modal'}, :aria => {:hidden => true}}= close_text
+.modal.fade{:id => id, :tabindex => -1, :role => 'dialog', :aria => {:labelledby => 'modalLabel'}}
+  .modal-dialog{:role => 'document'}
+    .modal-content
+      .modal-header
+        %button.close{:type => 'button', :data => {:dismiss => 'modal'}, :aria => {:hidden => true}}= 'x'
+        %h3#modalLabel= title
+      #modal-body.modal-body
+        = block
+      .modal-footer
+        %button.close{:type => 'button', :data => {:dismiss => 'modal'}, :aria => {:hidden => true}}= close_text
