@@ -70,8 +70,8 @@ module BootstrapLeatherHelper
     render(:partial => 'bootstrap_leather/alert_flash_messages', :locals => {:html_options => html_options})
   end
 
-  def modal(title = '', close_text = 'Close', html_options = {}, &block)
-    render(:partial => 'bootstrap_leather/modal', :locals => {:close_text => close_text, :title => title, :block => capture(&block), :html_options => html_options})
+  def modal(id, title = '', close_text = 'Close', html_options = {}, &block)
+    render(:partial => 'bootstrap_leather/modal', :locals => {:id => id, :close_text => close_text, :title => title, :block => capture(&block), :html_options => html_options})
   end
 
   def nav_item(text, href, options = {})
@@ -201,11 +201,18 @@ module BootstrapLeatherHelper
     render(:partial => 'bootstrap_leather/definition_list', :locals => {:list => list, :html_options => html_options})
   end
 
-  def carousel(id, items, options = {})
-    options[:image_method] ||= :image
-    options[:caption_method] ||= :caption
-    options[:description_method] ||= :description
-    render(:partial => 'bootstrap_leather/carousel', :locals => { :id => id, :items => items, :options => html_options})
+  def carousel(id, items, html_options = {}, &block)
+    html_options[:id] = id
+    html_options[:data] ||= {}
+    html_options[:data][:ride] = 'carousel'
+    render(:partial => 'bootstrap_leather/carousel', :locals => { :id => id, :slides => items.collect { |item| capture(item, &block) }, :html_options => html_options })
+  end
+
+  def carousel_with_thumbnails(id, items, html_options = {}, &block)
+    html_options[:id] = id
+    html_options[:data] ||= {}
+    html_options[:data][:ride] = 'carousel'
+    render(:partial => 'bootstrap_leather/carousel_with_thumbnails', :locals => { :id => id, :slides => items.collect { |item| capture(item, &block) }, :html_options => html_options })
   end
 
 

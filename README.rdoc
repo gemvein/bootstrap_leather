@@ -84,7 +84,7 @@ To render the ones you have saved up:
     = render_widgets 'md', 3
 
 === Modals
-    = modal 'Title of the modal here.' do
+    = modal 'css-id', 'Title of the modal here.' do
       %p Lorem ipsum, baby.
 
 === Badges and Labels
@@ -130,13 +130,23 @@ First, add them all, then render them.
       %p Yep, tab contents go inside.
     = render_tabs 'left'
 
-
 === Carousel
 
-Pass in items and an optional hash of parameters:
-    = carousel @items
-    or
-    = carousel @items, image_method: :logo, caption_method: :title, description_method: :summary
+Pass in an id string, items and a block for each slide:
+    = carousel 'css-id-for-carousel', @items do |item|
+        .carousel-caption
+            %h3= item.title
+            %p= item.description
+        = image_tag item.image.url(:large)
+
+=== Carousel with Thumbnails
+
+Pass in an id string, items and a block for each slide:
+    = carousel_with_thumbnails 'css-id-for-carousel', @items do |item|
+        .carousel-caption
+            %h3= item.title
+            %p= item.description
+        = image_tag item.image.url(:large), data: { thumbnail: item.image.url(:thumb) }
 
 === Thumbnail
 

@@ -1,0 +1,73 @@
+.carousel.carousel-with-thumbnails.slide.thumbnail{ html_options }
+  .carousel-outer
+    -# Wrapper for slides
+    .carousel-inner{ role: 'listbox' }
+      - slides.each_with_index do |slide, index|
+        %div{ class: (index == 0) ? 'item active' : 'item' }
+          = slide
+
+    - if slides.count >= 2
+      -# Controls
+      %a.left.carousel-control{ href: '#' + id, role: 'button', data: { slide: 'prev' } }
+        = icon 'chevron-left'
+        .sr-only Previous
+      %a.right.carousel-control{ href: '#' + id, role: 'button', data: { slide: 'next' } }
+        = icon 'chevron-right'
+        .sr-only Next
+
+  - if slides.count >= 2
+    -# Indicators
+    %ol.carousel-indicators
+      - slides.each_with_index do |slide, index|
+        %li{data: { target: '#' + id, slide_to: index }, class: (index == 0) ? 'active' : ''}
+
+- add_footer_javascript do
+  :javascript
+    $(function() {
+      $('##{id} .carousel-indicators li').each(function(index){
+        var thumbnail_src = $('##{id} .carousel-inner').children('.item').eq(index).find('img').data('thumbnail');
+        if(typeof thumbnail_src !== 'undefined') {
+          $(this).html('<img src="' + thumbnail_src + '" class="thumbnail">');
+        }
+      });
+    });
+
+- add_head_css do
+  :css
+    .carousel-with-thumbnails {
+      margin: 20px auto;
+      width: 400px;
+    }
+    .carousel-with-thumbnails .carousel-indicators {
+      margin: 10px 0 0;
+      overflow: auto;
+      position: static;
+      text-align: left;
+      white-space: nowrap;
+      width: 100%;
+    }
+    .carousel-with-thumbnails .carousel-indicators li {
+      background-color: transparent;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+      display: inline-block;
+      height: auto;
+      margin: 0 !important;
+      width: auto;
+    }
+    .carousel-with-thumbnails .carousel-indicators li img {
+      display: block;
+      opacity: 0.5;
+    }
+    .carousel-with-thumbnails .carousel-indicators li img.thumbnail {
+      margin-bottom: 0;
+    }
+    .carousel-with-thumbnails .carousel-indicators li.active img {
+      opacity: 1;
+    }
+    .carousel-with-thumbnails .carousel-indicators li:hover img {
+      opacity: 0.75;
+    }
+    .carousel-with-thumbnails .carousel-outer {
+      position: relative;
+    }
