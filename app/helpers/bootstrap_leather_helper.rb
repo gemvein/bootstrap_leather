@@ -103,9 +103,14 @@ module BootstrapLeatherHelper
     @widgets << { html_options: html_options, body: capture(&block) }
   end
 
-  def render_widgets(device_class = 'md', column_width = 3)
-    html = render(:partial => 'bootstrap_leather/widgets', :locals => {:widgets => @widgets, :column_width => column_width, :device_class => device_class})
+  def widgets
+    mine = @widgets
     @widgets = nil
+    mine
+  end
+
+  def render_widgets(device_class = 'md', column_width = 3)
+    html = render(:partial => 'bootstrap_leather/widgets', :locals => {:widgets => widgets, :column_width => column_width, :device_class => device_class})
     html.html_safe
   end
 
