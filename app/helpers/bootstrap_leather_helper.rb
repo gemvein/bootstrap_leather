@@ -38,7 +38,7 @@ module BootstrapLeatherHelper
     page_title << content_for(:subtitle)
     page_title << BootstrapLeather.configuration.application_title
     page_title << content_for(:keywords)
-    content_tag :title, page_title.compact.join(': ')
+    content_tag :title, CGI.unescapeHTML(page_title.compact.join(': '))
   end
 
   def render_h1(html_options = {})
