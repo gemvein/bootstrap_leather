@@ -78,6 +78,10 @@ module BootstrapLeatherHelper
     render(:partial => 'bootstrap_leather/nav_item', :locals => {:text => text, :href => href, :options => options})
   end
 
+  def nav_heading(text, options = {})
+    render(:partial => 'bootstrap_leather/nav_heading', :locals => {:text => text, :options => options})
+  end
+
   def nav_list(html_options = {}, &block)
     render(:partial => 'bootstrap_leather/nav_list', :locals => {:block => capture(&block), :html_options => html_options})
   end
