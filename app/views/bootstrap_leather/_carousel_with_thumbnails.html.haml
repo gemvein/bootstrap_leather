@@ -25,7 +25,7 @@
   :javascript
     $(function() {
       $('##{id} .carousel-indicators li').each(function(index){
-        var thumbnail_src = $('##{id} .carousel-inner').children('.item').eq(index).find('img').data('thumbnail');
+        var thumbnail_src = $('##{id} .carousel-inner').children('.item').eq(index).find('img[data-thumbnail]').data('thumbnail');
         if(typeof thumbnail_src !== 'undefined') {
           $(this).html('<img src="' + thumbnail_src + '" class="thumbnail">');
         }
