@@ -3,7 +3,7 @@
     .modal-content
       .modal-header
         %button.close{:type => 'button', :data => {:dismiss => 'modal'}, :aria => {:hidden => true}}= 'x'
-        %h3#modalLabel= title
+        %h3.modal-title#modalLabel= title
       #modal-body.modal-body
         = block
       .modal-footer
