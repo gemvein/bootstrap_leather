@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 # Example:
 #   gem 'activesupport', '>= 2.3.5'
 
-gem 'bootstrap-sass', '~> 3.3'
+gem 'bootstrap-sass-rails', '~> 3.1'
 gem 'rails', '~> 4'
 gem 'haml', '~> 4'
 gem 'jeweler', '~> 2'
