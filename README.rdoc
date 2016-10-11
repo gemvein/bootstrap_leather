@@ -1,6 +1,6 @@
 = BootstrapLeather
 
-<strong>Updated for Rails 5</strong>
+<b>Updated for Rails 5</b>
 
 {<img src="https://badge.fury.io/rb/bootstrap_leather.svg" alt="Gem Version" />}[http://badge.fury.io/rb/bootstrap_leather]
 {<img src="https://travis-ci.org/gemvein/bootstrap_leather.svg?branch=v0.2.3" alt="Build Status" />}[https://travis-ci.org/gemvein/bootstrap_leather]
