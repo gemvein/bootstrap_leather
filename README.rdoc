@@ -15,7 +15,7 @@ Install the gem
     gem 'bootstrap_leather'
     bundle install
 
-You will need to install bootstrap as a separate gem.  I recommend my own customizable_bootstrap gem, which makes use of boostrap-sass as a backend, but provides a set of files to make modifying it easier.
+You will need to install bootstrap as a separate gem.
 
 == Usage Examples
 
