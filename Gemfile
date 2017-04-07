@@ -8,6 +8,8 @@ gem 'rails-i18n', '>= 4', '< 6'
 gem 'haml-rails', '~> 0.9'
 gem 'jquery-rails', '~> 4'
 
+gem 'bootstrap_form', '~> 2'
+
 group :development do
   gem 'bundler', '~> 1.0'
   gem 'juwelier', '~> 2.1.0'
