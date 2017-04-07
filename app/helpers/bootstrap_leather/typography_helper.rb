@@ -14,7 +14,7 @@ module BootstrapLeather
 
     def render_page_header(html_options = {})
       render(
-        partial: 'bootstrap_leather/head/page_header',
+        partial: 'bootstrap_leather/typography/page_header',
         locals: {
           title: content_for(:title),
           subtitle: content_for(:subtitle),
@@ -23,15 +23,16 @@ module BootstrapLeather
       )
     end
 
-    def definition_list(list, html_options = {})
+    def dl(list, html_options = {})
       render(
-        partial: 'bootstrap_leather/typography/definition_list',
+        partial: 'bootstrap_leather/typography/dl',
         locals: {
           list: list,
           html_options: html_options
         }
       )
     end
-    alias dl definition_list
+    alias description_list dl
+    alias definition_list dl
   end
 end
