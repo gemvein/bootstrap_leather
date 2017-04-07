@@ -33,6 +33,14 @@ $ rails g bootstrap_leather:install
 
 ## Usage
 
+Give your views access to the helpers with:
+
+```ruby
+class ApplicationController < ActionController::Base
+  helper BootstrapLeather::ApplicationHelper
+end
+```
+
 ### SEO tools for head and body: Title, Keywords, Description
 
 In your view, assuming your model implements the given methods on the Item model (otherwise, omit):
