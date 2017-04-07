@@ -17,12 +17,12 @@ module BootstrapLeather
     end
 
     def render_tabs(orientation = 'top')
-      html = render(
-        partial: 'bootstrap_leather/tabs/tabs',
-        locals: { tabs: @tabs, orientation: orientation }
-      )
+      tabs = @tabs
       @tabs = nil
-      html.html_safe
+      render(
+        partial: 'bootstrap_leather/tabs/tabs',
+        locals: { tabs: tabs, orientation: orientation }
+      )
     end
   end
 end
