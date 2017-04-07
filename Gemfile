@@ -20,11 +20,11 @@ group :development, :test do
   gem 'byebug', '~> 9'
   gem 'factory_girl_rails', '~> 4.5'
   gem 'faker', '~> 1.4'
+  gem 'high_voltage', '~> 3'
   gem 'rspec-its', '>= 1'
   gem 'rspec-rails', '~> 3.5'
   gem 'seedbank', '~> 0.3'
   gem 'sqlite3', '~> 1.3'
-  gem 'high_voltage', '~> 3'
 end
 
 group :test do

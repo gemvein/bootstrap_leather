@@ -2,6 +2,7 @@
 
 require 'bootstrap_leather/engine'
 
+# Bootstrap Leather module
 module BootstrapLeather
   require 'rails'
 

@@ -1,0 +1,5 @@
+:ruby
+  message = content_tag(:ul) do
+    errors.map { |error| content_tag(:li, error) }
+  end
+= alert('alert-error', title, message)
