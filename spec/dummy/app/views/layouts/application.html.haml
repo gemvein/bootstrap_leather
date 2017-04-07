@@ -13,12 +13,10 @@
 %body
   .container
     = render_hero_unit
-    .row
-      .col-md-9.content
-        = render_h1         # For the h1 tag containing the title alone
-        #alert_area
-          = alert_flash_messages
-        = yield
-
+    .content
+      = render_page_header         # For the h1 tag containing the title alone
+      #alert_area
+        = alert_flash_messages
+      = yield
   %footer
   = render_footer_javascript
