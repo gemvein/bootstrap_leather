@@ -1,0 +1,1 @@
+FactoryGirl.create_list(:doo_dad, 5)

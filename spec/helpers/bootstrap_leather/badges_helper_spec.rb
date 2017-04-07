@@ -9,15 +9,17 @@ module BootstrapLeather
       end
       describe 'with a number' do
         subject { helper.badge 1 }
-        it { should have_tag :span, class: 'badge', text: /1/ }
+        it { should have_tag :span, with: { class: 'badge' }, text: /1/ }
       end
       describe 'with a string' do
         subject { helper.badge '1' }
-        it { should have_tag :span, class: 'badge', text: /1/ }
+        it { should have_tag :span, with: { class: 'badge' }, text: /1/ }
       end
       describe 'with a type' do
         subject { helper.badge '1', 'success' }
-        it { should have_tag :span, class: 'badge-success', text: /1/ }
+        it do
+          should have_tag :span, with: { class: 'badge-success' }, text: /1/
+        end
       end
     end
 
@@ -33,9 +35,7 @@ module BootstrapLeather
                  text: /Link Text/
                )
       end
-      it do
-        should have_tag(:span, class: 'badge', text: /99/)
-      end
+      it { should have_tag :span, with: { class: 'badge' }, text: /99/ }
     end
   end
 end

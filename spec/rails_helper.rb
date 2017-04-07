@@ -50,9 +50,12 @@ Shoulda::Matchers.configure do |config|
 end
 
 RSpec.configure do |config|
-  config.use_transactional_fixtures = false
 
   config.before(:suite) do
+    FactoryGirl.definition_file_paths << File.join(
+      File.dirname(__FILE__), 'factories'
+    )
+    FactoryGirl.find_definitions
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
     Dummy::Application.load_tasks
@@ -66,8 +69,6 @@ RSpec.configure do |config|
   end
 
   config.include RSpecHtmlMatchers, type: :helper
-
-  config.include FactoryGirl::Syntax::Methods
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
