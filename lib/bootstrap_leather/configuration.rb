@@ -18,7 +18,7 @@ module BootstrapLeather
       self.application_path = '/'
       self.application_title = 'Run the Generator, Config and Restart'
       self.application_description = 'Try it, very easy. `rails g bootstrap_leather:install` is the generator command.'
-      self.application_keywords = 'Then,fix,your,config,file'
+      self.application_keywords = 'Then, fix, your, config, file'
     end
   end
 end

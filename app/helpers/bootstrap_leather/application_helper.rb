@@ -1,4 +1,4 @@
-module BootstrapLeatherHelper
+module BootstrapLeather::ApplicationHelper
 
   def add_title(title)
     content_for :title, title
