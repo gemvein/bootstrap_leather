@@ -2,38 +2,13 @@
   - when :with, :inside
     %nav.navbar.navbar-default{ html_options }
       .container
-        .navbar-header
-          %button.navbar-toggle.collapsed{data:{toggle:'collapse', target:'#navbar-to-collapse'},type:'button'}
-            %span.sr-only
-              Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          = link_to logo_and_title, BootstrapLeather.configuration.application_path, :class => 'navbar-brand'
-        .collapse.navbar-collapse#navbar-to-collapse
-          = block
+    %nav.navbar.navbar-default{ html_options }
+      = render partial: 'bootstrap_leather/navigation/navbar_contents', locals: { block: block }
   - when :in, :outside
     .container
       %nav.navbar.navbar-default{ html_options }
-        .navbar-header
-          %button.navbar-toggle.collapsed{data:{toggle:'collapse', target:'#navbar-to-collapse'},type:'button'}
-            %span.sr-only
-              Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          = link_to logo_and_title, BootstrapLeather.configuration.application_path, :class => 'navbar-brand'
-        .collapse.navbar-collapse#navbar-to-collapse
-          = block
+    %nav.navbar.navbar-default{ html_options }
+      = render partial: 'bootstrap_leather/navigation/navbar_contents', locals: { block: block }
   - else
     %nav.navbar.navbar-default{ html_options }
-      .navbar-header
-        %button.navbar-toggle.collapsed{data:{toggle:'collapse', target:'#navbar-to-collapse'},type:'button'}
-          %span.sr-only
-            Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        = link_to logo_and_title, BootstrapLeather.configuration.application_path, :class => 'navbar-brand'
-      .collapse.navbar-collapse#navbar-to-collapse
-        = block
+      = render partial: 'bootstrap_leather/navigation/navbar_contents', locals: { block: block }

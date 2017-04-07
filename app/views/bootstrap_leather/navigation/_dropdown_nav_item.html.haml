@@ -1,11 +1,6 @@
-- id = Time.now.to_f
-- if active
-  - css_class = 'active'
-- else 
-  - css_class = ''
-%li{:class => 'dropdown ' + css_class}
-  %a.dropdown-toggle{:id => id, :href=>href, :data => {:toggle => 'dropdown'}, :role => 'button', aria: { expanded: false } }
+%li{class: 'dropdown ' + css_class}
+  %a.dropdown-toggle{ id: id, href: href, data: { toggle: 'dropdown' }, role: 'button', aria: { expanded: false } }
     = text
     %b.caret
-  %ul.dropdown-menu{:role => 'menu', :aria => {:labelledby => id}}
+  %ul.dropdown-menu{ role: 'menu', aria: { labelledby: id } }
     = block

@@ -48,10 +48,13 @@ module BootstrapLeather
     end
 
     def dropdown_nav_item(text, href, active = false, &block)
+      id = Time.now.to_f # Just to generate a unique id
+      css_class = active ? 'active' : ''
       render(
         partial: 'bootstrap_leather/navigation/dropdown_nav_item',
         locals: {
-          block: capture(&block), text: text, href: href, active: active
+          id: id, css_class: css_class, text: text, href: href,
+          block: capture(&block)
         }
       )
     end
@@ -63,5 +66,6 @@ module BootstrapLeather
     alias nav_bar navbar
     alias nav_bar_in_container navbar_in_container
     alias nav_bar_with_container navbar_with_container
+    alias nav_header nav_heading
   end
 end

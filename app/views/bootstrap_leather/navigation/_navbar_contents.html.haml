@@ -1,0 +1,5 @@
+.navbar-header
+  = render partial: 'bootstrap_leather/navigation/hamburger_menu'
+  = link_to logo_and_title, BootstrapLeather.configuration.application_path, class: 'navbar-brand'
+  .collapse.navbar-collapse#navbar-to-collapse
+    = block
