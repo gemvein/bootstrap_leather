@@ -4,7 +4,7 @@ module BootstrapLeather
   RSpec.describe IconsHelper, folder: :helpers do
     describe '#icon' do
       subject { helper.icon 'check' }
-      it { should have_tag :span, with: { class: 'glyphicon-check' } }
+      it { should have_tag 'span', with: { class: 'glyphicon-check' } }
     end
 
     describe '#icon_button_to' do
@@ -25,7 +25,7 @@ module BootstrapLeather
                  text: /Link Text/
                )
       end
-      it { should have_tag :span, with: { class: 'glyphicon-check' } }
+      it { should have_tag 'span', with: { class: 'glyphicon-check' } }
     end
 
     describe '#icon_link_to' do
@@ -42,7 +42,7 @@ module BootstrapLeather
                  text: /Link Text/
                )
       end
-      it { should have_tag :span, with: { class: 'glyphicon-check' } }
+      it { should have_tag 'span', with: { class: 'glyphicon-check' } }
     end
   end
 end

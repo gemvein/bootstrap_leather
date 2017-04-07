@@ -4,7 +4,7 @@ module BootstrapLeather
   RSpec.describe HeadHelper, folder: :helpers do
     describe '#responsive_meta_tag' do
       subject { helper.responsive_meta_tag }
-      it { should have_tag :meta, with: { name: 'viewport' } }
+      it { should have_tag 'meta', with: { name: 'viewport' } }
     end
     describe '#add_title' do
       before do
@@ -26,7 +26,7 @@ module BootstrapLeather
         helper.content_for(:subtitle) { 'Subtitle' }
       end
       subject { helper.render_title }
-      it { should have_tag :title, text:  'Title: Subtitle: Dummy Site' }
+      it { should have_tag 'title', text:  'Title: Subtitle: Dummy Site' }
     end
     describe '#add_description' do
       before do
@@ -41,7 +41,7 @@ module BootstrapLeather
       end
       subject { helper.render_description }
       it do
-        should have_tag :meta, with: {
+        should have_tag 'meta', with: {
           name: 'description', content: 'Description'
         }
       end
@@ -59,7 +59,7 @@ module BootstrapLeather
       end
       subject { helper.render_keywords }
       it do
-        should have_tag :meta, with: {
+        should have_tag 'meta', with: {
           name: 'keywords', content: 'Keywords'
         }
       end

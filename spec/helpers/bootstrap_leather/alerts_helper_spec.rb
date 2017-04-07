@@ -20,18 +20,18 @@ module BootstrapLeather
     describe '#alert' do
       subject { helper.alert 'danger', 'This is the title', 'This is the text' }
       it do
-        should have_tag(:div, with: { class: 'alert-danger' })
+        should have_tag('div', with: { class: 'alert-danger' })
       end
       it do
-        should have_tag(:h4, with: {
+        should have_tag('h4', with: {
           class: 'alert-heading'
         }, text: /This is the title/)
       end
       it do
-        should have_tag(:p, text: /This is the text/)
+        should have_tag('p', text: /This is the text/)
       end
       it do
-        should have_tag(:button, with: { class: 'close' })
+        should have_tag('button', with: { class: 'close' })
       end
     end
 
@@ -43,17 +43,17 @@ module BootstrapLeather
       end
       subject { helper.alert_flash_messages }
       it do
-        should have_tag :div, with: {
+        should have_tag 'div', with: {
           class: 'alert-danger'
         }, text: /This is the error/
       end
       it do
-        should have_tag :div, with: {
+        should have_tag 'div', with: {
           class: 'alert-info'
         }, text: /This is the notice/
       end
       it do
-        should have_tag :div, with: {
+        should have_tag 'div', with: {
           class: 'alert-warning'
         }, text: /This is the alert/
       end

@@ -16,11 +16,11 @@ module BootstrapLeather
         end
       end
       it do
-        should have_tag :div, with: {
+        should have_tag 'div', with: {
           class: 'carousel', id: 'css-id'
         }
       end
-      it { should have_tag :div, with: { class: 'item' }, count: 5}
+      it { should have_tag 'div', with: { class: 'item' }, count: 5}
     end
 
     describe '#carousel_with_thumbnails' do
@@ -34,11 +34,11 @@ module BootstrapLeather
         end
       end
       it do
-        should have_tag :div, with: {
+        should have_tag 'div', with: {
           class: 'carousel-with-thumbnails', id: 'css-id'
         }
       end
-      it { should have_tag :div, with: { class: 'item' }, count: 5}
+      it { should have_tag 'div', with: { class: 'item' }, count: 5}
     end
   end
 end

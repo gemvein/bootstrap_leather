@@ -4,16 +4,16 @@ module BootstrapLeather
   RSpec.describe ThumbnailsHelper, folder: :helpers do
     describe '#thumbnail' do
       subject do
-        helper.thumbnail do
-          image_tag '/assets/logo.svg'
-        end
+        helper.thumbnail image_tag '/assets/logo.svg'
       end
-      it do
-        should have_tag :ul, with: { class: 'thumbnails' } do
-          with_tag :li, with: { class: 'thumbnail' } do
-            with_tag :img, with: { src: '/assets/logo.svg' }
+      it 'shows a thumbnail' do
+        expect(subject).to(
+          have_tag('ul', with: { class: 'thumbnails' }) do
+            with_tag 'li', with: { class: 'thumbnail' } do
+              with_tag 'img', with: { src: '/assets/logo.svg' }
+            end
           end
-        end
+        )
       end
     end
   end

@@ -8,8 +8,8 @@ module BootstrapLeather
           %(Contents Go Here)
         end
       end
-      it { should have_tag :div, with: { class: 'modal', id: 'css-id' } }
-      it { should have_tag :h3, with: { class: 'modal-title' }, text: 'Title'}
+      it { should have_tag 'div', with: { class: 'modal', id: 'css-id' } }
+      it { should have_tag 'h3', with: { class: 'modal-title' }, text: 'Title'}
       it do
         should have_tag(
                  :div,

@@ -4,10 +4,10 @@ module BootstrapLeather
   RSpec.describe NavigationHelper, folder: :helpers do
     describe '#nav_item' do
       subject { helper.nav_item 'Link Text', 'http://example.com' }
-      it { should have_tag :li }
+      it { should have_tag 'li' }
       it do
         should have_tag(
-                 :a,
+                 'a',
                  with: { href: 'http://example.com' },
                  text: /Link Text/
                )
@@ -42,38 +42,36 @@ module BootstrapLeather
 
     describe '#navbar' do
       subject do
-        helper.navbar do
-          %('Navbar Contents')
-        end
+        helper.navbar { 'Contents' }
       end
       it do
-        should have_tag :nav, with: { class: 'navbar' }, text: /Navbar Contents/
+        should have_tag 'nav', with: { class: 'navbar' }
       end
     end
 
     describe '#navbar_with_container' do
       subject do
-        helper.navbar_with_container do
-          %('Navbar Contents')
-        end
+        helper.navbar_with_container { 'Contents' }
       end
-      it do
-        should have_tag :nav, with: { class: 'navbar' } do
-          with_tag :div, with: { class: 'container' }, text: /Navbar Contents/
-        end
+      it 'puts the container in a navbar' do
+        expect(subject).to(
+          have_tag('nav', with: { class: 'navbar' }) do
+            with_tag 'div', with: { class: 'container' }
+          end
+        )
       end
     end
 
     describe '#navbar_in_container' do
       subject do
-        helper.navbar_in_container do
-          %('Navbar Contents')
-        end
+        helper.navbar_in_container { 'Contents' }
       end
-      it do
-        should have_tag :div, with: { class: 'container' } do
-          with_tag :nav, with: { class: 'navbar' }, text: /Navbar Contents/
-        end
+      it 'puts the navbar in a container' do
+        expect(subject).to(
+          have_tag('div', with: { class: 'container' }) do
+            with_tag 'nav', with: { class: 'navbar' }
+          end
+        )
       end
     end
 
@@ -85,25 +83,27 @@ module BootstrapLeather
           end
         end
       end
-      it do
-        should have_tag :li, with: { class: 'dropdown' } do
-          with_tag(
-            :a,
-            with: { class: 'dropdown-toggle', href: '#' },
-            text: /Heading/
-          )
-          with_tag :ul, with: { class: 'dropdown-menu' } do
-            with_tag :li, with: { class: 'nav-item' } do
-              with_tag :a, with: { href: 'http://example.com' }, text: /Link/
+      it 'shows a dropdown item' do
+        expect(subject).to(
+          have_tag('li', with: { class: 'dropdown' }) do
+            with_tag(
+              'a',
+              with: { class: 'dropdown-toggle', href: '#' },
+              text: /Heading/
+            )
+            with_tag 'ul', with: { class: 'dropdown-menu' } do
+              with_tag 'li' do
+                with_tag 'a', with: { href: 'http://example.com' }, text: /Link/
+              end
             end
           end
-        end
+        )
       end
     end
 
     describe '#logo_and_title' do
       subject { helper.logo_and_title }
-      it { should have_tag :img, with: { src: '/assets/logo.svg' } }
+      it { should have_tag 'img', with: { src: '/assets/logo.svg' } }
       it { should match /Dummy Site/ }
     end
   end
