@@ -71,7 +71,7 @@ In your layout:
     <...>
   
     .container
-      = render_h1         # For the h1 tag containing the title alone
+      = render_page_header         # For the h1 tag containing the title and subtitle
       = yield
   
       <...>

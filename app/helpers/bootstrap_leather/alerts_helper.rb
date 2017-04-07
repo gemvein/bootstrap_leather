@@ -15,13 +15,6 @@ module BootstrapLeather
       end
     end
 
-    def alert_flash_messages(html_options = {})
-      render(
-        partial: 'bootstrap_leather/alerts/alert_flash_messages',
-        locals: { html_options: html_options }
-      )
-    end
-
     def alert(css_class, title, message = nil)
       render(
         partial: 'bootstrap_leather/alerts/alert',
@@ -33,16 +26,10 @@ module BootstrapLeather
       )
     end
 
-    def error_messages(object)
-      errors = object&.errors&.full_messages
-      return unless errors.any?
-      title = I18n.t(
-        'bootstrap_forms.errors.header',
-        model: object.class.model_name.human.downcase
-      )
+    def alert_flash_messages(html_options = {})
       render(
-        partial: 'bootstrap_leather/alerts/error_messages',
-        locals: { title: title, errors: errors }
+        partial: 'bootstrap_leather/alerts/alert_flash_messages',
+        locals: { html_options: html_options }
       )
     end
   end
