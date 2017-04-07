@@ -23,10 +23,6 @@ module BootstrapLeather
       content_for :head_css, &block
     end
 
-    def add_footer_javascript(&block)
-      content_for :footer_javascript, &block
-    end
-
     def render_keywords
       keywords = content_for(:keywords)
       keywords ||= BootstrapLeather.configuration.application_keywords
@@ -67,7 +63,7 @@ module BootstrapLeather
 
     def render_page_header(html_options = {})
       render(
-        partial: 'bootstrap_leather/page_header',
+        partial: 'bootstrap_leather/head/page_header',
         locals: {
           title: content_for(:title),
           subtitle: content_for(:subtitle),
@@ -85,11 +81,7 @@ module BootstrapLeather
     end
 
     def render_head_css
-      render(partial: 'bootstrap_leather/head_css')
-    end
-
-    def render_footer_javascript
-      render(partial: 'bootstrap_leather/footer_javascript')
+      render(partial: 'bootstrap_leather/head/head_css')
     end
   end
 end

@@ -6,7 +6,7 @@ module BootstrapLeather
   module ModalsHelper
     def modal(id, title = '', close_text = 'Close', html_options = {}, &block)
       render(
-        partial: 'bootstrap_leather/modal',
+        partial: 'bootstrap_leather/modals/modal',
         locals: {
           id: id,
           close_text: close_text,

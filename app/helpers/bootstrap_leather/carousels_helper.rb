@@ -8,7 +8,7 @@ module BootstrapLeather
       html_options[:data] ||= {}
       html_options[:data][:ride] = 'carousel'
       render(
-        partial: 'bootstrap_leather/carousel',
+        partial: 'bootstrap_leather/carousels/carousel',
         locals: {
           id: id, html_options: html_options,
           slides: items.collect { |item| capture(item, &block) }
@@ -21,7 +21,7 @@ module BootstrapLeather
       html_options[:data] ||= {}
       html_options[:data][:ride] = 'carousel'
       render(
-        partial: 'bootstrap_leather/carousel_with_thumbnails',
+        partial: 'bootstrap_leather/carousels/carousel_with_thumbnails',
         locals: {
           id: id, html_options: html_options,
           slides: items.collect { |item| capture(item, &block) }

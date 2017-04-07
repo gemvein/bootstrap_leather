@@ -17,14 +17,14 @@ module BootstrapLeather
 
     def alert_flash_messages(html_options = {})
       render(
-        partial: 'bootstrap_leather/alert_flash_messages',
+        partial: 'bootstrap_leather/alerts/alert_flash_messages',
         locals: { html_options: html_options }
       )
     end
 
     def alert(css_class, title, message = nil)
       render(
-        partial: 'bootstrap_leather/alert',
+        partial: 'bootstrap_leather/alerts/alert',
         locals: {
           css_class: css_class,
           title: title,
@@ -41,7 +41,7 @@ module BootstrapLeather
         model: object.class.model_name.human.downcase
       )
       render(
-        partial: 'bootstrap_leather/error_messages',
+        partial: 'bootstrap_leather/alerts/error_messages',
         locals: { title: title, errors: errors }
       )
     end

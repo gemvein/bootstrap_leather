@@ -17,7 +17,7 @@ module BootstrapLeather
 
     def render_widgets(device_class = 'md', column_width = 3)
       render(
-        partial: 'bootstrap_leather/widgets',
+        partial: 'bootstrap_leather/widgets/widgets',
         locals: {
           widgets: widgets,
           column_width: column_width,

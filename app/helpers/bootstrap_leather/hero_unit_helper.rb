@@ -8,7 +8,7 @@ module BootstrapLeather
     end
 
     def render_hero_unit
-      render(partial: 'bootstrap_leather/hero_unit')
+      render(partial: 'bootstrap_leather/hero_unit/hero_unit')
     end
   end
 end

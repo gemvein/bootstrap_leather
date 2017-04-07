@@ -5,7 +5,7 @@ module BootstrapLeather
   module ThumbnailsHelper
     def thumbnail(content = '', &block)
       render(
-        partial: 'bootstrap_leather/thumbnail',
+        partial: 'bootstrap_leather/thumbnails/thumbnail',
         locals: { content: content ? content : capture(&block) }
       )
     end

@@ -5,7 +5,7 @@ module BootstrapLeather
   module TypographyHelper
     def definition_list(list, html_options = {})
       render(
-        partial: 'bootstrap_leather/definition_list',
+        partial: 'bootstrap_leather/typography/definition_list',
         locals: {
           list: list,
           html_options: html_options

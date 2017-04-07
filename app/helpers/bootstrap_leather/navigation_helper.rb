@@ -5,21 +5,21 @@ module BootstrapLeather
   module NavigationHelper
     def nav_item(text, href, options = {})
       render(
-        partial: 'bootstrap_leather/nav_item',
+        partial: 'bootstrap_leather/navigation/nav_item',
         locals: { text: text, href: href, options: options }
       )
     end
 
     def nav_heading(text, options = {})
       render(
-        partial: 'bootstrap_leather/nav_heading',
+        partial: 'bootstrap_leather/navigation/nav_heading',
         locals: { text: text, options: options }
       )
     end
 
     def nav_list(html_options = {}, &block)
       render(
-        partial: 'bootstrap_leather/nav_list',
+        partial: 'bootstrap_leather/navigation/nav_list',
         locals: { block: capture(&block), html_options: html_options }
       )
     end
@@ -28,7 +28,7 @@ module BootstrapLeather
       container_mode = html_options[:container_mode]
       html_options[:container_mode] = nil
       render(
-        partial: 'bootstrap_leather/navbar',
+        partial: 'bootstrap_leather/navigation/navbar',
         locals: {
           block: capture(&block),
           html_options: html_options,
@@ -49,7 +49,7 @@ module BootstrapLeather
 
     def dropdown_nav_item(text, href, active = false, &block)
       render(
-        partial: 'bootstrap_leather/dropdown_nav_item',
+        partial: 'bootstrap_leather/navigation/dropdown_nav_item',
         locals: {
           block: capture(&block), text: text, href: href, active: active
         }
@@ -57,7 +57,7 @@ module BootstrapLeather
     end
 
     def logo_and_title
-      render(partial: 'bootstrap_leather/logo_and_title')
+      render(partial: 'bootstrap_leather/navigation/logo_and_title')
     end
 
     alias nav_bar navbar

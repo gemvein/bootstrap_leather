@@ -4,6 +4,7 @@ module BootstrapLeather
   # Main helper for BootstrapLeather
   module ApplicationHelper
     include HeadHelper
+    include FootHelper
     include GridHelper
     include NavigationHelper
     include AlertsHelper
