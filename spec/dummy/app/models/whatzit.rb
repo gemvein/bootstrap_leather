@@ -1,0 +1,2 @@
+class Whatzit < ApplicationRecord
+end

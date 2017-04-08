@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 BootstrapLeather.configure do |config|
   config.application_logo = '/assets/logo.svg'
   config.application_path = '/'

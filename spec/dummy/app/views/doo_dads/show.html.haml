@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @doo_dad.name
+%p
+  %b Body:
+  = @doo_dad.body
+
+= link_to 'Edit', edit_doo_dad_path(@doo_dad)
+\|
+= link_to 'Back', doo_dads_path

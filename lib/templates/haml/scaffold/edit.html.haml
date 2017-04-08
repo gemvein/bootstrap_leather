@@ -1,0 +1,8 @@
+- add_title :editing.l(name: '<%= singular_table_name.titleize %>')
+
+= render 'form', <%= singular_table_name %>: @<%= singular_table_name %>
+
+%p
+  = link_to :show.l, @<%= singular_table_name %>
+  |
+  = link_to :back.l, <%= index_helper %>_path

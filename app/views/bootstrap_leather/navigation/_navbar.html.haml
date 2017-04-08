@@ -1,0 +1,14 @@
+- case container_mode
+  - when :with, :inside
+    %nav.navbar.navbar-default{ html_options }
+      .container
+    %nav.navbar.navbar-default{ html_options }
+      = render partial: 'bootstrap_leather/navigation/navbar_contents', locals: { block: block }
+  - when :in, :outside
+    .container
+      %nav.navbar.navbar-default{ html_options }
+    %nav.navbar.navbar-default{ html_options }
+      = render partial: 'bootstrap_leather/navigation/navbar_contents', locals: { block: block }
+  - else
+    %nav.navbar.navbar-default{ html_options }
+      = render partial: 'bootstrap_leather/navigation/navbar_contents', locals: { block: block }

@@ -1,0 +1,10 @@
+- add_title :showing.l(name: 'Whatzit')
+%dl
+  %dt Name:</dt>
+  %dd= @whatzit.name
+  %dt Description:</dt>
+  %dd= @whatzit.description
+%p
+  = link_to :edit.l, edit_whatzit_path(@whatzit)
+  |
+  = link_to :back.l, whatzits_path

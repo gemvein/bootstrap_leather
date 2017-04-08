@@ -1,0 +1,10 @@
+- add_title :showing.l(name: '<%= singular_table_name.titleize %>')
+%dl
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+  %dt <%= attribute.human_name %>:</dt>
+  %dd= @<%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+%p
+  = link_to :edit.l, edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
+  |
+  = link_to :back.l, <%= index_helper %>_path

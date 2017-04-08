@@ -1,0 +1,23 @@
+%h1 Listing doo_dads
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Body
+      %th
+      %th
+      %th
+
+  %tbody
+    - @doo_dads.each do |doo_dad|
+      %tr
+        %td= doo_dad.name
+        %td= doo_dad.body
+        %td= link_to 'Show', doo_dad
+        %td= link_to 'Edit', edit_doo_dad_path(doo_dad)
+        %td= link_to 'Destroy', doo_dad, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Doo dad', new_doo_dad_path

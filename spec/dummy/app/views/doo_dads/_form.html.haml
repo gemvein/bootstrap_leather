@@ -1,0 +1,16 @@
+= form_for @doo_dad do |f|
+  - if @doo_dad.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@doo_dad.errors.count, "error")} prohibited this doo_dad from being saved:"
+      %ul
+        - @doo_dad.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :body
+    = f.text_area :body
+  .actions
+    = f.submit 'Save'
