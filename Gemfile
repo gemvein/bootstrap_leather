@@ -12,7 +12,7 @@ gem 'bootstrap_form', '~> 2'
 
 group :development do
   gem 'bundler', '~> 1.0'
-  gem 'juwelier', '~> 2.1.0'
+  gem 'jeweler', '~> 2'
   gem 'rspec', '~> 3.5.0'
   gem 'rubocop', require: false
 end
