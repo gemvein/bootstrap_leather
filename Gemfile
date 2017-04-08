@@ -14,7 +14,7 @@ group :development do
   gem 'bundler', '~> 1.0'
   gem 'juwelier', '~> 2'
   gem 'rspec', '~> 3.5.0'
-  gem 'rubocop', require: false
+  gem 'rubocop', '>= 0.48', require: false
 end
 
 group :development, :test do
