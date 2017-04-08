@@ -26,6 +26,7 @@ Juwelier::Tasks.new do |gem|
     'Bootstrap'
   gem.email = 'karen.e.lundgren@gmail.com'
   gem.authors = ['Karen Lundgren']
+  gem.version = BootstrapLeather::VERSION
   # dependencies defined in Gemfile
 end
 Juwelier::RubygemsDotOrgTasks.new
