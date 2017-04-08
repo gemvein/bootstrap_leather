@@ -1,0 +1,2 @@
+class Erbit < ApplicationRecord
+end

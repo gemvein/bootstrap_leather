@@ -1,0 +1,9 @@
+en:
+  are_you_sure: 'Are you sure?'
+  back: 'Back'
+  destroy: 'Destroy'
+  edit: 'Edit'
+  editing: 'Editing %{name}'
+  new: 'New %{name}'
+  show: 'Show'
+  showing: 'Showing %{name}'

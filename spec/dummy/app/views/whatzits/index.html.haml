@@ -1,0 +1,19 @@
+- add_title 'Whatzits'
+
+%table.table.table-bordered
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th{colspan: '3'}
+  %tbody
+    - @whatzits.each do |whatzit|
+      %tr
+        %td= whatzit.name
+        %td= whatzit.description
+        %td= link_to :show.l, whatzit, class: 'btn btn-success'
+        %td= link_to :edit.l, edit_whatzit_path(whatzit), class: 'btn btn-info'
+        %td= link_to :destroy.l, whatzit, method: :delete, data: { confirm: :are_you_sure.l }, class: 'btn btn-danger'
+
+%p
+  = link_to :new.l(name: 'Whatzit'), new_whatzit_path, class: 'btn btn-primary'

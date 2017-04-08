@@ -14,6 +14,7 @@ module BootstrapLeather
     include TabsHelper
     include BadgesHelper
     include ThumbnailsHelper
+    include TypographyHelper
     include IconsHelper
     include CarouselsHelper
   end

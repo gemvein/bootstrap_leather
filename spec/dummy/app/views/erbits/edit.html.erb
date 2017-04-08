@@ -1,0 +1,9 @@
+<% add_title :editing.l(name: 'Erbit') %>
+
+<%= render 'form', erbit: @erbit %>
+
+<p>
+  <%= link_to :show.l, @erbit %>
+  |
+  <%= link_to :back.l, erbits_path %>
+</p>

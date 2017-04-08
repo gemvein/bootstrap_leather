@@ -1,0 +1,21 @@
+- add_title '<%= plural_table_name.titleize %>'
+
+%table.table.table-bordered
+  %thead
+    %tr
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+      %th <%= attribute.human_name %>
+<% end -%>
+      %th{colspan: '3'}
+  %tbody
+    - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+      %tr
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+        %td= <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+        %td= link_to :show.l, <%= singular_table_name %>, class: 'btn btn-success'
+        %td= link_to :edit.l, edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-info'
+        %td= link_to :destroy.l, <%= singular_table_name %>, method: :delete, data: { confirm: :are_you_sure.l }, class: 'btn btn-danger'
+
+%p
+  = link_to :new.l(name: '<%= singular_table_name.titleize %>'), new_<%= singular_table_name %>_path, class: 'btn btn-primary'

@@ -1,0 +1,8 @@
+- add_title :editing.l(name: 'Whatzit')
+
+= render 'form', whatzit: @whatzit
+
+%p
+  = link_to :show.l, @whatzit
+  |
+  = link_to :back.l, whatzits_path

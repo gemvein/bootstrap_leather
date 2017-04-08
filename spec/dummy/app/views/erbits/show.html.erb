@@ -1,0 +1,12 @@
+<% add_title :showing.l(name: 'Erbit') %>
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @erbit.name %></dd>
+  <dt>Description:</dt>
+  <dd><%= @erbit.description %></dd>
+</dl>
+<p>
+  <%= link_to :edit.l, edit_erbit_path(@erbit) %>
+  |
+  <%= link_to :back.l, erbits_path %>
+</p>

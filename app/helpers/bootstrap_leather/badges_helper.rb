@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module BootstrapLeather
-  # Badges, i.e. tiny counts in a pill
+  # Badges, i.e. tiny counts in a pill shape
   module BadgesHelper
     def badge_to(text, value, link, html_options = {})
       html_options[:href] = url_for link
