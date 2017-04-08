@@ -13,10 +13,10 @@ load 'rails/tasks/statistics.rake'
 
 require 'bundler/gem_tasks'
 
-require 'jeweler'
-Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20
-  # for more options
+require 'juwelier'
+Juwelier::Tasks.new do |gem|
+  # gem is a Gem::Specification...
+  # see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = 'bootstrap_leather'
   gem.homepage = 'http://www.gemvein.com/museum/cases/bootstrap_leather'
   gem.license = 'MIT'
@@ -29,7 +29,7 @@ Jeweler::Tasks.new do |gem|
   gem.version = BootstrapLeather::VERSION
   # dependencies defined in Gemfile
 end
-Jeweler::RubygemsDotOrgTasks.new
+Juwelier::RubygemsDotOrgTasks.new
 
 
 begin
