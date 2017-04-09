@@ -11,10 +11,9 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Karen Lundgren".freeze]
-  s.date = "2017-04-08"
+  s.date = "2017-04-09"
   s.description = "BootstrapLeather is a collection of view helpers and scaffold generators that makes it easier to create apps using Twitter Bootstrap".freeze
   s.email = "karen.e.lundgren@gmail.com".freeze
-  s.executables = ["rails".freeze]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md"
@@ -72,7 +71,6 @@ Gem::Specification.new do |s|
     "app/views/bootstrap_leather/typography/_dl.html.haml",
     "app/views/bootstrap_leather/typography/_page_header.html.haml",
     "app/views/bootstrap_leather/widgets/_widgets.html.haml",
-    "bin/rails",
     "bootstrap_leather.gemspec",
     "config/locales/en.yml",
     "lib/bootstrap_leather.rb",
