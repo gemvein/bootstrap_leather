@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'bootstrap_leather/engine'
-
 # Bootstrap Leather module
 module BootstrapLeather
   require 'rails'
@@ -9,6 +7,5 @@ module BootstrapLeather
   require 'bootstrap_leather/configuration'
   require 'bootstrap_leather/engine'
   require 'bootstrap_leather/localization'
-  # require 'bootstrap_leather/railtie'
   require 'bootstrap_leather/version'
 end
