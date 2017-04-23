@@ -6,5 +6,5 @@
       html_options[:content_class] = nil
       html_options[:class] = 'column ' + column_class(device_class, column_width)
     %div{ html_options }
-      %div{:class => "well #{content_class}"}
+      %div{:class => content_class}
         =widget[:body]
