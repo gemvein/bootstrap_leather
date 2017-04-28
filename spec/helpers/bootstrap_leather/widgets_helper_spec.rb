@@ -11,11 +11,7 @@ module BootstrapLeather
       end
       subject { helper.render_widgets('md', 3) }
       it 'shows the tab links' do
-        expect(subject).to(
-          have_tag(:div, with: { class: 'col-md-3' }) do
-            with_tag :div, with: { class: 'well' }
-          end
-        )
+        expect(subject).to(have_tag(:div, with: { class: 'col-md-3' }))
       end
     end
   end
