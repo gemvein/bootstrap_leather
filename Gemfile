@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '>= 4', '< 6'
 gem 'rails-i18n', '>= 4', '< 6'
 
-gem 'haml-rails', '~> 0.9'
+gem 'haml', '>= 5', '< 6'
 gem 'jquery-rails', '~> 4'
 
 gem 'bootstrap_form', '~> 2'
