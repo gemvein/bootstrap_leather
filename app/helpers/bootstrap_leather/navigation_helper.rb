@@ -10,6 +10,14 @@ module BootstrapLeather
       )
     end
 
+    def nav_divider(options = {})
+      options[:role] = 'separator'
+      render(
+        partial: 'bootstrap_leather/navigation/nav_divider',
+        locals: { options: options }
+      )
+    end
+
     def nav_heading(text, options = {})
       render(
         partial: 'bootstrap_leather/navigation/nav_heading',
