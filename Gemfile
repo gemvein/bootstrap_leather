@@ -13,8 +13,8 @@ gem 'bootstrap_form', '~> 2'
 group :development do
   gem 'bundler', '~> 1.0'
   gem 'juwelier', '~> 2'
-  gem 'rspec', '~> 3.5.0'
-  gem 'rubocop', '>= 0.48', require: false
+  gem 'rspec', '>= 3.5.0', '< 4'
+  gem 'rubocop', '>= 0.48', '< 1', require: false
 end
 
 group :development, :test do
@@ -23,7 +23,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.5'
   gem 'faker', '~> 1.4'
   gem 'high_voltage', '~> 3'
-  gem 'rspec-its', '>= 1'
+  gem 'rspec-its', '>= 1', '< 2'
   gem 'rspec-rails', '~> 3.5'
   gem 'seedbank', '~> 0.3'
   gem 'sqlite3', '~> 1.3'
