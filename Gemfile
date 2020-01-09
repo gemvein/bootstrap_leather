@@ -2,16 +2,16 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '>= 4', '< 6'
-gem 'rails-i18n', '>= 4', '< 6'
+gem 'rails', '>= 6', '< 7'
+gem 'rails-i18n', '>= 6', '< 7'
 
 gem 'haml', '>= 5', '< 6'
 gem 'jquery-rails', '~> 4'
 
-gem 'bootstrap_form', '~> 2'
+gem 'bootstrap_form', '>= 4'
 
 group :development do
-  gem 'bundler', '~> 1.0'
+  gem 'bundler', '>= 2'
   gem 'juwelier', '~> 2'
   gem 'rspec', '>= 3.5.0', '< 4'
   gem 'rubocop', '>= 0.48', '< 1', require: false
@@ -19,9 +19,9 @@ end
 
 group :development, :test do
   gem 'bootstrap-sass', '~> 3.3'
-  gem 'byebug', '~> 9'
-  gem 'factory_girl_rails', '~> 4.5'
-  gem 'faker', '~> 1.4'
+  gem 'byebug', '>= 9', '< 12'
+  gem 'factory_bot', '>= 4'
+  gem 'faker', '>= 1.4', '< 3'
   gem 'high_voltage', '~> 3'
   gem 'rspec-its', '>= 1', '< 2'
   gem 'rspec-rails', '~> 3.5'
@@ -30,7 +30,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara', '~> 2.4'
+  gem 'capybara', '>= 2.4', '< 4'
   gem 'coveralls', '~> 0.8', require: false
   gem 'database_cleaner', '~> 1.4'
   gem 'launchy', '~> 2', require: false
@@ -38,5 +38,5 @@ group :test do
   gem 'rails-controller-testing', '~> 1.0'
   gem 'rspec-collection_matchers', '>= 1'
   gem 'rspec-html-matchers', '~> 0.7'
-  gem 'shoulda-matchers', '>= 2.8', '< 3.2'
+  gem 'shoulda-matchers', '>= 2.8', '< 5'
 end

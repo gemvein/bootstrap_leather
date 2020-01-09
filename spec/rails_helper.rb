@@ -12,7 +12,6 @@ require 'spec_helper'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'shoulda/matchers'
-require 'factory_girl_rails'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'database_cleaner'
