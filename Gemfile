@@ -8,10 +8,10 @@ gem 'rails-i18n', '>= 6', '< 7'
 gem 'haml', '>= 5', '< 6'
 gem 'jquery-rails', '~> 4'
 
-gem 'bootstrap_form', '>= 4'
+gem 'bootstrap_form', '>= 4', '< 6'
 
 group :development do
-  gem 'bundler', '>= 2'
+  gem 'bundler', '>= 2', '< 3'
   gem 'juwelier', '~> 2'
   gem 'rspec', '>= 3.5.0', '< 4'
   gem 'rubocop', '>= 0.48', '< 1', require: false
@@ -20,7 +20,7 @@ end
 group :development, :test do
   gem 'bootstrap-sass', '~> 3.3'
   gem 'byebug', '>= 9', '< 12'
-  gem 'factory_bot', '>= 4'
+  gem 'factory_bot', '>= 4', '< 6'
   gem 'faker', '>= 1.4', '< 3'
   gem 'high_voltage', '~> 3'
   gem 'rspec-its', '>= 1', '< 2'
