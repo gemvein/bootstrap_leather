@@ -2,8 +2,8 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '>= 6', '< 7'
-gem 'rails-i18n', '>= 6', '< 7'
+gem 'rails', '>= 7', '< 8'
+gem 'rails-i18n', '>= 7', '< 8'
 
 gem 'haml', '>= 5', '< 6'
 gem 'jquery-rails', '~> 4'
